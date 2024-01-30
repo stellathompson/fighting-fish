@@ -24,7 +24,7 @@ def test_connection():
     (county text, State text, Trump16 float, clinton16 float, totalvotes16 int,
     Trump20 float, Biden20 float, Totalvotes20 int, Cases int, Deaths int, Totalpop int, 
     Men int, Women int, Hispanic float, White float, Black float, Native float,
-    Asian float, Pacific float, Poverty float  ;
+    Asian float, Pacific float, Poverty float );
     """
 
 
