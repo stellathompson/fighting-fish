@@ -53,7 +53,7 @@ def test_query_two():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections ORDER BY deaths DESC "
+    sql = " SELECT * FROM elections ORDER BY Totalpop DESC "
     
     cur.execute( sql )
 
@@ -62,7 +62,7 @@ def test_query_two():
     if row == None:
         print("Something went wrong...")
     else:
-        print(row[0], "had the most COVID deaths in 2020 and voted Trump", row[2], "and Biden", row[3])
+        print(row[0], "had the highest population and voted Trump", row[2], "and Biden", row[3])
 
     conn.commit()
 
