@@ -23,9 +23,9 @@ def test_query_one():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database="thompsons",
-        user="thompsons",
-        password="paper876stars")
+        database="panditk",
+        user="panditk",
+        password="square555cow")
 
     cur = conn.cursor()
 
