@@ -29,7 +29,7 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE Trump16 > 0.75 ORDER BY DESC"
+    sql = "SELECT * FROM elections WHERE Trump16 > 0.75 ORDER BY Trump16 DESC"
     
     cur.execute( sql )
 
