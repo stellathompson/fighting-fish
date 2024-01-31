@@ -194,3 +194,4 @@ def test_query_two():
 
 test_connection()
 test_query_one()
+test_query_two()
