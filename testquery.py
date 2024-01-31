@@ -29,14 +29,14 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE Trump16 > 0.75 ORDER BY Trump16 DESC"
+    sql = "SELECT * FROM elections WHERE Trump16 BETWEEN 0.600 AND 0.900 ORDER BY Trump16 DESC"
     
     cur.execute( sql )
 
     row = cur.fetchone()
 
     if row == None:
-        print("No counties voted for Trump by more than 75%")
+        print("No counties voted for Trump by more than 60%")
     else:
         print("The county that voted the most for Trump is", row[0], "by", row[2])
 
