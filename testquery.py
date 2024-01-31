@@ -36,9 +36,9 @@ def test_query_one():
     row = cur.fetchone()
 
     if row == None:
-        print("No counties voted for Trump by more than 75%")
+        print("No counties voted for Trump in 2016 by more than 75%")
     else:
-        print("The county that voted the most for Trump is", row[0], "by", row[2])
+        print("The county that voted the most for Trump in 2016 is", row[0], "by", row[2])
 
     conn.commit()
 
