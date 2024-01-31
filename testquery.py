@@ -42,38 +42,38 @@ def test_query_one():
 
     conn.commit()
 
-# def test_query_two():
+def test_query_two():
 
-#     conn = psycopg2.connect(
-#         host="localhost",
-#         port=5432,
-#         database="thompsons",
-#         user="thompsons",
-#         password="paper876stars")
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
 
-#     cur = conn.cursor()
+    cur = conn.cursor()
 
-#     sql = " SELECT * FROM cities ORDER BY population DESC "
+    sql = " SELECT * FROM elections ORDER BY deaths DESC "
     
-#     cur.execute( sql )
+    cur.execute( sql )
 
-#     row = cur.fetchone()
+    row = cur.fetchone()
 
-#     if row == None:
-#         print("Something went wrong...")
-#     else:
-#         print(row[0], "has a population of", row[2], "(the biggest in the dataset).")
+    if row == None:
+        print("Something went wrong...")
+    else:
+        print(row[0], "had the most COVID deaths in 2020 and voted Trump", row[2], "and Biden", row[3])
 
-#     conn.commit()
+    conn.commit()
 
 # def test_query_three():
 
 #     conn = psycopg2.connect(
 #         host="localhost",
 #         port=5432,
-#         database="thompsons",
-#         user="thompsons",
-#         password="paper876stars")
+        # database="panditk",
+        # user="panditk",
+        # password="square555cow")
 
 #     cur = conn.cursor()
 
@@ -95,9 +95,9 @@ def test_query_one():
 #     conn = psycopg2.connect(
 #         host="localhost",
 #         port=5432,
-#         database="thompsons",
-#         user="thompsons",
-#         password="paper876stars")
+        # database="panditk",
+        # user="panditk",
+        # password="square555cow")
 
 #     cur = conn.cursor()
 
@@ -157,9 +157,9 @@ def test_query_one():
 #     conn = psycopg2.connect(
 #         host="localhost",
 #         port=5432,
-#         database="thompsons",
-#         user="thompsons",
-#         password="paper876stars")
+        # database="panditk",
+        # user="panditk",
+        # password="square555cow")
 
 #     cur = conn.cursor()
 #     state = input("What is the name of the state you are looking for?")
