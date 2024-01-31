@@ -53,7 +53,7 @@ def test_query_two():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE Totalpop NOT null ORDER BY Totalpop DESC "
+    sql = " SELECT * FROM elections WHERE Totalpop IS NOT null ORDER BY Totalpop DESC "
     
     cur.execute( sql )
 
