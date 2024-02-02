@@ -53,7 +53,7 @@ def test_query_two():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE totalPop IS NOT null ORDER BY totalPop DESC "
+    sql = " SELECT * FROM elections WHERE totalpop IS NOT null ORDER BY totalpop DESC "
     
     cur.execute( sql )
 
@@ -77,7 +77,7 @@ def test_query_three():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE totalVot16 IS NOT null ORDER BY totalVot16 DESC"
+    sql = "SELECT * FROM elections WHERE totalvote16 IS NOT null ORDER BY totalvote16 DESC"
     
     cur.execute( sql )
 
