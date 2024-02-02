@@ -2,7 +2,8 @@ import psycopg2
 
 # This function tests to make sure that you can connect to the database
 def test_connection():
-    
+
+
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -15,8 +16,6 @@ def test_connection():
     else:
         print( "Problem with Connection" )
 
-    conn.commit()
-    conn.close()
     return None
 
 def test_query_one():
@@ -30,8 +29,8 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = """SELECT county, state, trump16 FROM elections WHERE trump16 > 0.75 ORDER BY trump16 DESC;"""
-
+    sql = "SELECT * FROM elections WHERE Trump16 > 0.75 ORDER BY Trump16 DESC"
+    
     cur.execute( sql )
 
     row = cur.fetchone()
@@ -39,8 +38,8 @@ def test_query_one():
     if row == None:
         print("No counties voted for Trump in 2016 by more than 75%")
     else:
-        print("The county {}, {} voted the most for Trump in 2016 by {:.2f}%.".format(row[0], row[1], round(row[2], 4)*100))
-    
+        print("The county that voted the most for Trump in 2016 is", row[0], "by", row[2])
+
     conn.commit()
 
 def test_query_two():
@@ -54,7 +53,7 @@ def test_query_two():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE totalpop IS NOT null ORDER BY totalpop DESC "
+    sql = " SELECT * FROM elections WHERE Totalpop IS NOT null ORDER BY Totalpop DESC "
     
     cur.execute( sql )
 
@@ -78,7 +77,7 @@ def test_query_three():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE totalvote16 IS NOT null ORDER BY totalvote16 DESC"
+    sql = "SELECT * FROM elections WHERE Totalvotes16 IS NOT null ORDER BY totalvotes16 DESC"
     
     cur.execute( sql )
 
@@ -103,7 +102,7 @@ def test_query_four():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE trump16 IS NOT null AND clinton16 IS NOT null ORDER BY black DESC"
+    sql = " SELECT * FROM elections WHERE Trump16 IS NOT null AND Clinton16 IS NOT null ORDER BY Black DESC"
     
     cur.execute( sql )
 
@@ -128,7 +127,7 @@ def test_query_five():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE state = 'NY' ORDER BY trump20 ASC "
+    sql = " SELECT * FROM elections WHERE state = 'NY' ORDER BY Trump20 ASC "
     
     cur.execute( sql )
 
@@ -144,7 +143,7 @@ def test_query_five():
 
 test_connection()
 test_query_one()
-'''test_query_two()
+test_query_two()
 test_query_three()
 test_query_four()
-test_query_five()'''
+test_query_five()
