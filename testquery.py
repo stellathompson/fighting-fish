@@ -3,7 +3,6 @@ import psycopg2
 # This function tests to make sure that you can connect to the database
 def test_connection():
 
-
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -16,9 +15,76 @@ def test_connection():
     else:
         print( "Problem with Connection" )
 
+    if conn is not None:
+        print( "Connection Worked! \n" )
+    else:
+        print( "Problem with Connection. \n" )
+
+    conn.commit()
+    conn.close()
+    return None
+    
+# This function prints top 5 counties voted the most for Trump in 2016
+def execute_query_one():
+
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
+
+    cur = conn.cursor()
+
+    sql = """SELECT county, state, trump16 FROM elections WHERE trump16 IS NOT NULL AND trump16 > 0.75 ORDER BY trump16 DESC LIMIT 5;"""
+
+    cur.execute( sql )
+
+    row_list = cur.fetchall()
+
+    if not row_list:
+        print("No counties voted for Trump in 2016 by more than 75%. \n")
+    else:
+        print("In 2016, top 5 counties that voted the most for Trump are:")
+        for row in row_list:
+            print("{}, {} voted for Trump by {:.2f}%.".format(row[0], row[1], round(row[2], 4)*100))
+    print("")
+    
+    conn.commit()
+    cur.close()
+    conn.close()
     return None
 
-def test_query_one():
+# This function determines which county had the highest population, then prints which percentage of votes towards Trump in 2020
+def execute_query_two():
+    
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
+
+    cur = conn.cursor()
+
+    sql = """SELECT county, state, trump20, biden20, totalpop FROM elections WHERE trump20 IS NOT NULL AND biden20 IS NOT NULL AND totalpop IS NOT NULL ORDER BY totalpop DESC;"""
+    
+    cur.execute( sql )
+
+    row = cur.fetchone()
+
+    if row == None:
+        print("Something went wrong... \n")
+    else:
+        print("In 2020, the county {}, {} had the highest population of {}. \nThey voted for Trump by {:.2f}% and Biden by {:.2f}%.\n".format(row[0], row[1], row[4], round(row[2], 4)*100, round(row[3], 4)*100))
+   
+    conn.commit()
+    cur.close()
+    conn.close()
+    return None
+
+# This function determines which county had the highest total vote, then prints which percentage of votes towards Trump and Biden in 2020
+def execute_query_three():
 
     conn = psycopg2.connect(
         host="localhost",
@@ -29,21 +95,25 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE Trump16 > 0.75 ORDER BY Trump16 DESC"
+    sql = """SELECT county, state, trump16, clinton16, totalvote16 FROM elections WHERE trump16 IS NOT NULL AND clinton16 IS NOT NULL AND totalvote16 IS NOT NULL ORDER BY totalvote16 DESC;"""
     
     cur.execute( sql )
 
     row = cur.fetchone()
 
     if row == None:
-        print("No counties voted for Trump in 2016 by more than 75%")
+        print("Something went wrong...\n")
     else:
-        print("The county that voted the most for Trump in 2016 is", row[0], "by", row[2])
+        print("In 2016, the county {}, {} voted the most in total number of {}. \nThey voted for Trump by {:.2f}% and Clinton by {:.2f}%.\n ".format(row[0], row[1], row[4], round(row[2], 4)*100, round(row[3], 4)*100))
 
     conn.commit()
+    cur.close()
+    conn.close()
+    return None  
 
-def test_query_two():
-
+# This function determines which county had the highest Black population, then prints which percentage of votes towards Trump and Clinton in 2016
+def execute_query_four():
+    
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -53,21 +123,26 @@ def test_query_two():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE Totalpop IS NOT null ORDER BY Totalpop DESC "
+    sql = """SELECT county, state, trump16, clinton16, black FROM elections WHERE trump16 IS NOT NULL AND clinton16 IS NOT NULL AND black IS NOT NULL ORDER BY black DESC;"""
     
     cur.execute( sql )
 
     row = cur.fetchone()
 
     if row == None:
-        print("Something went wrong...")
+        print("Something went wrong...\n")
     else:
-        print(row[0], "county had the highest population in 2020 and voted Trump by", row[5], "and Biden by", row[6])
+        print("In 2016, the county {}, {} had the highest Black population of {}%. \nThey voted for Trump by {:.2f}% and Clinton by {:.2f}%.\n ".format(row[0], row[1], row[4], round(row[2], 4)*100, round(row[3], 4)*100))
 
     conn.commit()
+    cur.close()
+    conn.close()
+    return None
 
-def test_query_three():
 
+# This function prints which county in NY had the lowest votes towards Trump in 2020
+def execute_query_five():
+    
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -77,73 +152,30 @@ def test_query_three():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE Totalvotes16 IS NOT null ORDER BY totalvotes16 DESC"
+    state_input = input("Enter the abbreviation of state you want to look at: ")
+
+    sql = """SELECT county, state, trump20 FROM elections WHERE state = %s AND trump20 IS NOT NULL ORDER BY trump20;"""
     
-    cur.execute( sql )
+    cur.execute( sql, [state_input.upper()] )
 
     row = cur.fetchone()
 
     if row == None:
-        print("Something went wrong...")
+        print("You entered wrong state abbreviation. Try again.\n")
     else:
-        print("The county with the most total votes in 2016 is", row[0], "and they voted for Clinton by", row[3])
+        print("In 2020, the county {} had the lowest number of votes towards Trump in state {} by {:.2f}%. \n ".format(row[0], row[1], round(row[2], 4)*100))
 
     conn.commit()
-    
-
-def test_query_four():
-
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="panditk",
-        user="panditk",
-        password="square555cow")
-
-    cur = conn.cursor()
-
-    sql = " SELECT * FROM elections WHERE Trump16 IS NOT null AND Clinton16 IS NOT null ORDER BY Black DESC"
-    
-    cur.execute( sql )
-
-    row = cur.fetchone()
-
-
-    if row == None:
-        print("Something went wrong...")
-    else:
-        print("The county with the highest percentage of Black people voted for Trump", row[2], "and Clinton", row[3], "in 2016.")
-
-    conn.commit()
-
-def test_query_five():
-
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="panditk",
-        user="panditk",
-        password="square555cow")
-
-    cur = conn.cursor()
-
-    sql = " SELECT * FROM elections WHERE state = 'NY' ORDER BY Trump20 ASC "
-    
-    cur.execute( sql )
-
-    row = cur.fetchone()
-
-    if row == None:
-        print("Something went wrong, try again")
-    else:
-        print( " The county", row[0],"had the lowest number of votes towards Trump in New York by", row[2])
-
-    conn.commit()
+    cur.close()
+    conn.close()
+    return None
 
 
 test_connection()
-test_query_one()
-test_query_two()
-test_query_three()
-test_query_four()
-test_query_five()
+
+# Functions below send an SQL query to the database
+execute_query_one()
+execute_query_two()
+execute_query_three()
+execute_query_four()
+execute_query_five()
