@@ -62,7 +62,7 @@ def test_query_two():
     if row == None:
         print("Something went wrong...")
     else:
-        print(row[0], "county had the highest population in 2020 and voted Trump", row[5], "and Biden", row[6])
+        print(row[0], "county had the highest population in 2020 and voted Trump by", row[5], "and Biden by", row[6])
 
     conn.commit()
 
@@ -116,8 +116,34 @@ def test_query_four():
 
     conn.commit()
 
+def test_query_five():
+
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
+
+    cur = conn.cursor()
+
+    sql = " SELECT * FROM elections WHERE state = 'NY' ORDER BY Trump20 ASC "
+    
+    cur.execute( sql )
+
+    row = cur.fetchone()
+
+    if row == None:
+        print("Something went wrong, try again")
+    else:
+        print( " The county", row[0],"had the lowest number of votes towards Trump in New York by", row[2])
+
+    conn.commit()
+
+
 test_connection()
 test_query_one()
 test_query_two()
 test_query_three()
 test_query_four()
+test_query_five()
