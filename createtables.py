@@ -27,7 +27,6 @@ def test_connection():
     asian float, pacific float, poverty float );
     """
 
-
     cur = conn.cursor()
 
     cur.execute(dropsql)
