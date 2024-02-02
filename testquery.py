@@ -29,7 +29,7 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE Trump16 > 0.75 ORDER BY Trump16 DESC"
+    sql = "SELECT * FROM elections WHERE trump16 > 0.75 ORDER BY trump16 DESC"
     
     cur.execute( sql )
 
@@ -53,7 +53,7 @@ def test_query_two():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE Totalpop IS NOT null ORDER BY Totalpop DESC "
+    sql = " SELECT * FROM elections WHERE totalPop IS NOT null ORDER BY totalPop DESC "
     
     cur.execute( sql )
 
@@ -77,7 +77,7 @@ def test_query_three():
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM elections WHERE Totalvotes16 IS NOT null ORDER BY totalvotes16 DESC"
+    sql = "SELECT * FROM elections WHERE totalVot16 IS NOT null ORDER BY totalVot16 DESC"
     
     cur.execute( sql )
 
@@ -102,7 +102,7 @@ def test_query_four():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE Trump16 IS NOT null AND Clinton16 IS NOT null ORDER BY Black DESC"
+    sql = " SELECT * FROM elections WHERE trump16 IS NOT null AND clinton16 IS NOT null ORDER BY black DESC"
     
     cur.execute( sql )
 
@@ -127,7 +127,7 @@ def test_query_five():
 
     cur = conn.cursor()
 
-    sql = " SELECT * FROM elections WHERE state = 'NY' ORDER BY Trump20 ASC "
+    sql = " SELECT * FROM elections WHERE state = 'NY' ORDER BY trump20 ASC "
     
     cur.execute( sql )
 
