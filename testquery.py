@@ -29,8 +29,9 @@ def test_query_one():
 
     cur = conn.cursor()
 
-    sql = """SELECT county, state, trump16 FROM elections WHERE trump16 > 0.75 ORDER BY trump16 DESC;"""
-    
+    #sql = """SELECT county, state, trump16 FROM elections WHERE trump16 > 0.75 ORDER BY trump16 DESC;"""
+    sql = """SELECT county, state, trump16 FROM elections ORDER BY trump16 DESC;"""
+
     cur.execute( sql )
 
     # row = cur.fetchone()
