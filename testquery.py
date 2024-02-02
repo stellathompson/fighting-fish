@@ -2,8 +2,7 @@ import psycopg2
 
 # This function tests to make sure that you can connect to the database
 def test_connection():
-
-
+    
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -16,6 +15,8 @@ def test_connection():
     else:
         print( "Problem with Connection" )
 
+    conn.commit()
+    conn.close()
     return None
 
 def test_query_one():
