@@ -21,10 +21,10 @@ def test_connection():
 
     electionssql = """
     CREATE TABLE elections 
-    (county text, State text, Trump16 float, clinton16 float, totalvotes16 int,
-    Trump20 float, Biden20 float, Totalvotes20 int, Cases int, Deaths int, Totalpop int, 
-    Men int, Women int, Hispanic float, White float, Black float, Native float,
-    Asian float, Pacific float, Poverty float );
+    (county text, state text, trump16 float, clinton16 float, totalVot16 int,
+    trump20 float, biden20 float, totalVot20 int, cases int, deaths int, totalPop int, 
+    men int, women int, hispanic float, white float, black float, native float,
+    asian float, pacific float, poverty float );
     """
 
 
