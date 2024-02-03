@@ -11,11 +11,6 @@ def test_connection():
         password="square555cow")
 
     if conn is not None:
-        print( "Connection Worked!" )
-    else:
-        print( "Problem with Connection" )
-
-    if conn is not None:
         print( "Connection Worked! \n" )
     else:
         print( "Problem with Connection. \n" )
