@@ -4,17 +4,20 @@
 #
 
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import psycopg2
 from operator import itemgetter
 
-app = Flask(__name__)
+app = Flask(__name__, 
+        static_url_path='',
+        static_folder='static',
+        template_folder='templates')
 
 # To test hompage
 # http://stearns.mathcs.carleton.edu:5137/
 @app.route('/')
 def load_hompage():
-    return render_template('hompage.html')
+    return render_template('homepage.html')
 
 @app.route('/pop/<state>')
 def counties(state):
