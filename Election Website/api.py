@@ -22,7 +22,7 @@ def load_hompage():
 # Candidate-based queries
 @app.route('/<year>/<candidate>')
 def search_candidate(year, candidate):
-    conn = psycopg2.connect(host="localhost", port = 5432, database="yangl4", user="yangl4", password="stars929bond")
+    conn = psycopg2.connect(host="localhost", port = 5137, database="yangl4", user="yangl4", password="stars929bond")
     cur = conn.cursor()
 
     if year == 2016 and candidate == "Trump":
