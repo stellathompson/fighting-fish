@@ -12,7 +12,7 @@ def homepage():
 def counties(state):
     conn = psycopg2.connect(
         host="localhost",
-        port=5129,
+        port=5432,
         database="panditk",
         user="panditk",
         password="square555cow")
