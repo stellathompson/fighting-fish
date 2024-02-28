@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-image: url('Background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+
+<h2>Election Data Visualizer</h2>
+<h1>Find Your County's Political Preference:</h1>
+
+<p class="HomeButton">
+  <button>
+    Home
+  </button>
+  </p>
+
+<p class="AboutUsButton">
+  <button>
+    About Us
+  </button>
+  </p>
+
+  <form action="/action_page.php">
+    <label for="county">County:</label>
+    <select name="county" id="county">
+        <option value="">Select a county</option>
+        {% for county in counties %}
+            <option value="{{ county[0] }}">{{ county[0] }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+  <br><br>
+  <input type="button" value="Go!" onclick="handleSubmit()">
+</form>
+
+<script>
+    function handleSubmit() {
+      var selectedStateId = document.getElementById("county").value;
+      window.location.href = "/results/" + selectedStateId + "/2016";
+
+    }
+    </script>
+
+
+
+</body>
+</html>
