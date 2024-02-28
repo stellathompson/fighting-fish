@@ -24,7 +24,7 @@ def counties(state):
     list_of_counties = cur.fetchall()
 
 
-    return render_template("back.html",  counties = list_of_counties)
+    return render_template("select-county-page.html",  counties = list_of_counties)
 
 @app.route('/aboutus')
 def aboutus_page():
@@ -33,3 +33,7 @@ def aboutus_page():
 if __name__ == '__main__':
     my_port = 5129
     app.run(host='0.0.0.0', port = my_port)
+
+@app.route('/results/<state>/<county>/2016')
+def results_page():
+    return render_template("results-page.html")

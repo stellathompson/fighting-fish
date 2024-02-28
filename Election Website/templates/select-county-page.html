@@ -47,8 +47,9 @@ body {
 
 <script>
     function handleSubmit() {
-      var selectedStateId = document.getElementById("county").value;
-      window.location.href = "/results/" + selectedStateId + "/2016";
+      var selectedCountyId = document.getElementById("county").value;
+      var selectedStateId = document.getElementById("state").value;
+      window.location.href = "/results/" + selectedStateId + selectedCountyId + "/2016";
 
     }
     </script>
