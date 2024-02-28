@@ -28,7 +28,7 @@ def counties(state):
 
 @app.route('/aboutus')
 def aboutus_page():
-    return render_template("aboutus.html")
+    return render_template("about-us-page.html")
 
 if __name__ == '__main__':
     my_port = 5129
