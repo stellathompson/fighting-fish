@@ -4,14 +4,11 @@
 #
 
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template
 import psycopg2
 from operator import itemgetter
 
-app = Flask(__name__, 
-        static_url_path='',
-        static_folder='static',
-        template_folder='templates')
+app = Flask(__name__)
 
 # To test hompage
 # http://stearns.mathcs.carleton.edu:5137/
