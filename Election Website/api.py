@@ -6,6 +6,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for
 import psycopg2
+from operator import itemgetter
 
 app = Flask(__name__, 
         static_url_path='',
@@ -16,13 +17,42 @@ app = Flask(__name__,
 # http://stearns.mathcs.carleton.edu:5137/
 @app.route('/')
 def load_hompage():
-    bodyText= "Welcome to our website! Click on the button below for a surprise!"
-    return app.send_static_file('hompage.html', bodyText = bodyText)
+    return render_template('hompage.html')
+
+@app.route('/pop/<state>')
+def counties(state):
+    state_name = state.upper()
+    sql = f"SELECT county FROM elections WHERE state = '{state_name}';"
+    list_of_counties = list(map(itemgetter(0), get_data(sql)))
+    return list_of_counties
+
+@app.route('/aboutus')
+def aboutus_page():
+    return render_template("about-us-page.html")
+
+@app.route('/results/<state>/<county>/2016')
+def load_results_page():
+    return render_template("results-page.html")
+
+# This function sends a given sql query to the database
+# and returns the data obtained as a list (row) of tuples (cols).
+def get_data(sql):
+    conn = psycopg2.connect(
+        host="localhost", 
+        port = 5432, 
+        database="panditk", 
+        user="panditk", 
+        password="square555cow")
     
+    cur = conn.cursor()
+    cur.execute(sql)
+    return cur.fetchall()
+
+'''
 # Candidate-based queries
 @app.route('/<year>/<candidate>')
 def search_candidate(year, candidate):
-    conn = psycopg2.connect(host="localhost", port = 5137, database="yangl4", user="yangl4", password="stars929bond")
+    conn = psycopg2.connect(host="localhost", port = 5432, database="panditk", user="panditk", password="square555cow")
     cur = conn.cursor()
 
     if year == 2016 and candidate == "Trump":
@@ -61,6 +91,7 @@ def search_database(db_conn, db_cursor, search):
         output_str = output_str + "\n"
     
     return output_str
+'''
 
 
 if __name__ == '__main__':
