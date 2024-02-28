@@ -5,21 +5,20 @@ from flask import render_template
 app = Flask(__name__)
 
 @app.route('/')
-def welcome():
-    bodyText= "Welcome to my website! Click on the button below for a surprise!"
-    return render_template("homepage.html", bodyText = bodyText )
+def homepage():
+    return render_template("homepage.html")
 
-@app.route('/pop/<word1>')
-def counties(word1):
+@app.route('/pop/<state>')
+def counties(state):
     conn = psycopg2.connect(
         host="localhost",
-        port=5432,
-        database="lumbud",
-        user="lumbud",
-        password="spider665eyebrow")
+        port=5129,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
 
     cur = conn.cursor()
-    state_name = word1.upper()
+    state_name = state.upper()
     sql = f"SELECT county FROM elections WHERE state = '{state_name}';"
     cur.execute(sql)
     list_of_counties = cur.fetchall()
@@ -27,6 +26,9 @@ def counties(word1):
 
     return render_template("back.html",  counties = list_of_counties)
 
+@app.route('/aboutus')
+def aboutus_page():
+    return render_template("aboutus.html")
 
 if __name__ == '__main__':
     my_port = 5129
