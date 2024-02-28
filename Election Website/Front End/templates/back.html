@@ -3,7 +3,7 @@
 <head>
 <style>
 body {
-  background-image: url('Background.png');
+  background-image: url('../static/Background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -16,16 +16,20 @@ body {
 <h1>Find Your County's Political Preference:</h1>
 
 <p class="HomeButton">
-  <button>
-    Home
-  </button>
-  </p>
-
+  <a href="http://137.22.5.171:5129/">
+    <button>
+      Home
+    </button>
+  </a>
+</p>
+  
 <p class="AboutUsButton">
-  <button>
-    About Us
-  </button>
-  </p>
+  <a href="http://137.22.5.171:5129/aboutus">
+    <button>
+      About Us
+    </button>
+  </a>
+</p>
 
   <form action="/action_page.php">
     <label for="county">County:</label>
@@ -48,8 +52,6 @@ body {
 
     }
     </script>
-
-
 
 </body>
 </html>
