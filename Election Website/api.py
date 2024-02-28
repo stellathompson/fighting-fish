@@ -16,7 +16,7 @@ app = Flask(__name__,
 # http://stearns.mathcs.carleton.edu:5137/
 @app.route('/')
 def load_hompage():
-    bodyText= "Welcome to my website! Click on the button below for a surprise!"
+    bodyText= "Welcome to our website! Click on the button below for a surprise!"
     return app.send_static_file('hompage.html', bodyText = bodyText)
     
 # Candidate-based queries
