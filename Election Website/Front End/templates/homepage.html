@@ -85,20 +85,27 @@ body {
 	</select>
   
   
-  <br><br>
-  <input type="button" value="Go!">
-</form>
-   
 
-<p>Welcome to Election Data Visualizer, 
+  <br><br>
+  <input type="button" value="Go!" onclick="handleSubmit()">
+</form>
+
+
+<p>Welcome to Election Data Visualizer,
   your ultimate resource for exploring the
-  2016 and 2020 elections. Discover the diverse 
-  voting patterns across different demographics, races, and candidates. 
-  Whether you're a political enthusiast, researcher, or simply curious, our 
-  platform offers insightful analyses to understand the dynamics of past elections 
+  2016 and 2020 elections. Discover the diverse
+  voting patterns across different demographics, races, and candidates.
+  Whether you're a political enthusiast, researcher, or simply curious, our
+  platform offers insightful analyses to understand the dynamics of past elections
   like never before. Explore, compare, and gain valuable insights with Election Data Visualizer.</p>
 
-
+<script>
+function handleSubmit() {
+  var selectedStateId = document.getElementById("state").value;
+  window.location.href = "/pop/" + selectedStateId;
+  // Additional logic can be added here, such as sending the data to the server.
+}
+</script>
 
 </body>
 </html>
