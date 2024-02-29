@@ -9,22 +9,21 @@
 }
 
 .RunningHead{
+  color: white;
   font-family: Gill Sans, sans-serif;
   text-align: left;
 }
 
 .Header{
+  color: white;
   font-family: "Georgia", serif;
   font-size: 70px;
   text-align: center;
 }
 
-.Line{
-  height:2px;
-  border-width:0;
-}
 
 .Body{
+  color: white;
   margin-left: 40px;
   margin-right: 40px;
   font-family: Arial, sans-serif;
@@ -32,5 +31,6 @@
 }
 
 .Button{
+  color: white;
   margin-left: 10px;
 }
