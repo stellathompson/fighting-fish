@@ -20,6 +20,8 @@
 }
 
 .Body{
+  margin-left: 40px;
+  margin-right: 40px;
   font-family: Arial, sans-serif;
   text-align: center;
 }
