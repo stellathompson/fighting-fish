@@ -1,15 +1,28 @@
+.MenuBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ButtonsContainer{
+  display: flex;
+}
+
+.RunningHead{
+  font-family: Gill Sans, sans-serif;
+  text-align: left;
+}
+
 .Header{
+  font-family: "Georgia", serif;
   text-align: center;
-  background-color: DarkSlateGrey;
-  color:white;
 }
 
 .Body{
+  font-family: Arial, sans-serif;
   text-align: center;
-  color:black;
 }
 
 .Button{
-  text-align: center;
+  margin-left: 10px;
 }
-
