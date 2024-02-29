@@ -19,6 +19,11 @@
   text-align: center;
 }
 
+.Line{
+  height:2px;
+  border-width:0;
+}
+
 .Body{
   margin-left: 40px;
   margin-right: 40px;
