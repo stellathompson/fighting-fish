@@ -30,10 +30,10 @@ def counties(state):
 def aboutus_page():
     return render_template("about-us-page.html")
 
+@app.route('/results/<county>/2016')
+def results_page(county):
+    return render_template("results-page.html", countyname = county)
+
 if __name__ == '__main__':
     my_port = 5129
     app.run(host='0.0.0.0', port = my_port)
-
-@app.route('/results/<state>/<county>/2016')
-def results_page():
-    return render_template("results-page.html")
