@@ -11,7 +11,7 @@
   .RunningHead{
     color: white;
     font-family: Impact, fantasy;	
-    font-size: 35px;
+    font-size: 30px;
     text-align: left;
   }
   
@@ -32,14 +32,15 @@
   }
   
   .Button{
-    color: white;
+    color: white
     margin-left: 10px;
-    background-color: #8d6dcd; /* Purple */
+    background-color: #d1b3ce; /* Purple */
     border: none;
     padding: 15px 32px;
     text-align: center;
     display: inline-block;
     font-size: 16px;
     border-radius: 8px;
+    text-decoration: none;
   }
   
