@@ -32,14 +32,15 @@
   }
   
   .Button {
-    background-color: #d1b3ce;
+    background-color: #8a4a7f;
     border: none;
+    border-radius: 8px;
     color: white;
-    padding: 16px 32px;
+    padding: 12px 28px;
     text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
+    font-size: 20px;
+    margin: 2px 2px;
+    opacity: 0.7;
     transition: 0.3s;
     display: inline-block;
     text-decoration: none;
