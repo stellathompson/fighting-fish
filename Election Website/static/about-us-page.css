@@ -31,18 +31,20 @@
     text-align: center;
   }
   
-  .Button{
-    color: white
-    margin-left: 10px;
-    background-color: #d1b3ce; /* Purple */
-    outline: 2px solid transparent;
-    outline-offset: 2px;
+  .Button {
+    background-color: #d1b3ce;
     border: none;
-    padding: 15px 32px;
+    color: white;
+    padding: 16px 32px;
     text-align: center;
-    display: inline-block;
     font-size: 16px;
-    border-radius: 8px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
     text-decoration: none;
+    cursor: pointer;
   }
+  
+  .Button:hover {opacity: 1}
   
