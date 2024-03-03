@@ -32,14 +32,9 @@
 }
 
 .Button button{
-  font-family: "Trebuchet MS", sans-serif;	
-  color: white;
-  margin-left: 10px;
-}
-
-.Button button{
   background-color: transparent;
   color: white;
+  border: 0px solid white;
   font-family: "Trebuchet MS", sans-serif;
   margin-left: 10px;
   transition-duration: 0.3s;
@@ -48,6 +43,7 @@
 .Button button:hover{
   background-color: white;
   color: black;
+  border: 0px solid white;
   font-family: "Trebuchet MS", sans-serif;
   margin-left: 10px;
   transition-duration: 0.3s;
@@ -65,6 +61,7 @@ select#state {
 input[type="button"] {
   background-color: transparent;
   color: white;
+  border: 0px solid white;
   font-family: "Trebuchet MS", sans-serif; /* Change to the desired font */
   transition-duration: 0.3s;
   }
@@ -72,6 +69,7 @@ input[type="button"] {
   input[type="button"]:hover{
   background-color: white;
   color: black;
+  border: 0px solid white;
   font-family: "Trebuchet MS", sans-serif; /* Change to the desired font */
   transition-duration: 0.3s;
   }
