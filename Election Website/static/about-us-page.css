@@ -62,9 +62,6 @@
  
 .container {
   margin: 0 auto;
-  width: 80%;
-  background-color: #cb9cd5;
-  border-radius: 8px;
   text-align: center;
   overflow: hidden;
 }
