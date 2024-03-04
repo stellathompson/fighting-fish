@@ -62,7 +62,7 @@
  
 .container {
   align-items: center;
-  float: left;
+  float: center;
   background-color: #cb9cd5;
   border-radius: 8px;
 }
@@ -70,4 +70,5 @@
 .image {
   float: left;
   padding: 5px;
+  border
 }
