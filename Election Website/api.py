@@ -3,8 +3,7 @@
 # author: Luha Yang
 #
 
-
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import psycopg2
 from operator import itemgetter
 
@@ -33,7 +32,7 @@ def load_results_page():
 
 # This function sends a given sql query to the database
 # and returns the data obtained as a list (row) of tuples (cols).
-def get_data(sql):
+def get_data(query):
     conn = psycopg2.connect(
         host="localhost", 
         port = 5137, 
@@ -42,8 +41,14 @@ def get_data(sql):
         password="stars929bond")
     
     cur = conn.cursor()
-    cur.execute(sql)
+    cur.execute(query)
     return cur.fetchall()
+
+@app.route('/api/pie_data/<state>', methods=['GET'])
+def get_pie_data(state):
+    sql = f"SELECT * FROM election_state WHERE state_code = '{state.upper()}';"
+    data = get_data(sql)
+    return jsonify(data)
 
 '''
 # Candidate-based queries
