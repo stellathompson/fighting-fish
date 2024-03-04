@@ -61,14 +61,15 @@
 }
  
 .container {
-  align-items: center;
-  float: center;
+  margin: 0 auto;
+  width: 80%;
   background-color: #cb9cd5;
   border-radius: 8px;
+  text-align: center;
+  overflow: hidden;
 }
 
 .image {
-  float: center;
-  padding: 5px;
-  border
+  display: inline-block; 
+  margin: 5px;
 }
