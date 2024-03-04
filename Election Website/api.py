@@ -36,10 +36,10 @@ def load_results_page():
 def get_data(sql):
     conn = psycopg2.connect(
         host="localhost", 
-        port = 5432, 
-        database="panditk", 
-        user="panditk", 
-        password="square555cow")
+        port = 5137, 
+        database="yangl4", 
+        user="yangl4", 
+        password="stars929bond")
     
     cur = conn.cursor()
     cur.execute(sql)
