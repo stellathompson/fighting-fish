@@ -18,7 +18,7 @@ def load_hompage():
 @app.route('/pop/<state>')
 def counties(state):
     current_directory = os.path.dirname(os.path.realpath(__file__))
-    template_path = os.path.join(current_directory, '../new-dataset/templates/index.html')
+    template_path = os.path.join(current_directory, '/piechart/templates/index.html')
     return render_template(template_path)
 
 @app.route('/aboutus')
