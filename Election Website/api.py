@@ -46,7 +46,7 @@ def get_data(query):
 
 @app.route('/api/pie_data/<state>', methods=['GET'])
 def get_pie_data(state):
-    sql = f"SELECT * FROM election_state WHERE state_code = '{state.upper()}';"
+    sql = f"SELECT * FROM election_county WHERE state_code = '{state.upper()}';"
     data = get_data(sql)
     return jsonify(data)
 

@@ -1,51 +1,62 @@
+.animate {
+  animation-name: fade;
+  animation-duration: 5s;
+}
+
+@keyframes fade {
+  from {color: transparent;}
+  to {color: white;}
+}
+
 .MenuBar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ButtonsContainer{
+  margin-right: 30px;
+  display: flex;
+}
+
+.RunningHead{
+  margin-left: 30px;
+  color: white;
+  font-family: Impact, fantasy;	
+  text-align: left;
+}
+
+.Header{
+  color: white;
+  font-family: Impact, fantasy;	
+  font-size: 70px;
+  text-align: center;
+}
+
+.Body{
+  line-height: 1.6;
+  color: white;
+  margin-left: 300px;
+  margin-right: 300px;
+  font-family: "Trebuchet MS", sans-serif;	
+  text-align: center;
+}
+
+.Button button{
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-left: 10px;
+  transition-duration: 0.3s;
+}
   
-  .ButtonsContainer{
-    display: flex;
-  }
-  
-  .RunningHead{
-    color: white;
-    font-family: Impact, fantasy;	
-    font-size: 30px;
-    text-align: left;
-  }
-  
-  .Header{
-    color: white;
-    font-family: Impact, fantasy;	
-    font-size: 70px;
-    text-align: center;
-  }
-  
-  
-  .Body{
-    color: white;
-    margin-left: 160px;
-    margin-right: 160px;
-    font-family: "Trebuchet MS", sans-serif;	
-    text-align: center;
-  }
-  
-  .Button {
-    background-color: #8a4a7f;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    padding: 10px 24px;
-    text-align: center;
-    font-size: 20px;
-    margin: 1px 1px;
-    opacity: 0.9;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .Button:hover {opacity: 1}
+.Button button:hover{
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-left: 10px;
+  transition-duration: 0.3s;
+}
   
