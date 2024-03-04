@@ -16,7 +16,7 @@ def load_hompage():
     return render_template('homepage.html')
 
 @app.route('/pop/<state>')
-def counties():
+def counties(state):
     current_directory = os.path.dirname(os.path.realpath(__file__))
     template_path = os.path.join(current_directory, '../new-dataset/templates/index.html')
     return render_template(template_path)
