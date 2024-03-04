@@ -5,7 +5,7 @@
 
 from flask import Flask, render_template, jsonify
 import psycopg2
-from operator import itemgetter
+import os
 
 app = Flask(__name__)
 
@@ -16,8 +16,10 @@ def load_hompage():
     return render_template('homepage.html')
 
 @app.route('/pop/<state>')
-def counties(state):
-    return render_template("../new-dataset/index.html")
+def counties():
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    template_path = os.path.join(current_directory, '../new-dataset/templates/index.html')
+    return render_template(template_path)
 
 @app.route('/aboutus')
 def aboutus_page():
