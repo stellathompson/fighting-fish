@@ -63,10 +63,11 @@
 .container {
   align-items: center;
   float: left;
+  background-color: #cb9cd5;
+  border-radius: 8px;
 }
 
 .image {
   float: left;
   padding: 5px;
-  border: 3px solid #cb9cd5;
 }
