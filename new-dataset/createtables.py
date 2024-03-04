@@ -7,7 +7,7 @@ def test_connection():
 
     conn = psycopg2.connect(
         host="localhost",
-        port=5137,
+        port=5432,
         database="yangl4",
         user="yangl4",
         password="stars929bond")
