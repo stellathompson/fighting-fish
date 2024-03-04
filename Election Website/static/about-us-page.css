@@ -73,3 +73,10 @@
   display: inline-block; 
   margin: 5px;
 }
+
+.caption {
+  margin-top: 5px; 
+  font-style: italic;
+  font-family: "Trebuchet MS", sans-serif; 
+  text-align: center;
+}
