@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Data Visualizer</title>
     <link rel="stylesheet" heref="/static/styles.css">
     <script src="/static/example.js"></script>
@@ -9,13 +10,15 @@
 </head>
 
 <body>
-    <div class="pie-chart-container"></div>
-      <div class="election" id="election">
-        <div class="label">State Vote Result</div>
-      </div>
+  <!-- Dropdown for selecting the year -->
+  <label for="yearSelector">Select Year:</label>
+  <select id="yearSelector" onchange="updateChart()">
+    <option value="2016">2016</option>
+    <option value="2020">2020</option>  
+  </select>
 
-      <div class="demographic" id="demographic">
-        <div class="label">State Demographic</div>
-      </div>
+  <!-- Container for the pie chart -->
+    <div id="pieChart"></div>
+
 </body>
 </html>

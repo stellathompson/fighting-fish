@@ -30,30 +30,53 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to draw the pie chart
     function drawPieChart(data) {
 
+        // Filter data based on the selected year
+        const filteredData = data.map(entry => ({
+            county: entry.county,
+            value: +entry['trump${currentYear}']
+        }))
+
         // Use D3.js to create a pie chart
         const width = 400;
         const height = 400;
         const radius = Math.min(width, height) / 2;
 
-        const svg = d3.select('#pie-chart-container')
+        const color = d3.scaleOrdinal(d3.schemeCategory10)
+
+        const arc = d3.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(0);
+
+        const pie = d3.pie()
+            .sort(null)
+            .value(d => d.value)
+
+        // Remove previous chart if it exists
+        d3. select('#pieChart').selectAll('*').remove();
+
+        // Append new SVG for the chart
+        const svg = d3.select('#pieChart')
             .append('svg')
             .attr('width', width)
             .attr('height', height)
             .append('g')
             .attr('transform', `translate(${width / 2},${height / 2})`);
 
-        const pie = d3.pie().value(d => d.value);
-        const path = d3.arc().outerRadius(radius).innerRadius(0);
+        // Generate pie chart slices
+        const g = svg.selectAll('.arc')
+            .data(pie(filteredData))
+            .enter().append('g')
+            .attr('class', 'arc');
 
-        const color = d3.scaleOrdinal(d3.schemeCategory10)
+        // Draw slices
+        g.append('path')
+            .attr('d', arc)
+            .style('fill', d => color(d.data.county));
 
-        const arcs = svg.selectAll('arc')
-            .data(pie(data))
-            .enter()
-            .append('g');
-
-        arcs.append('path')
-            .attr('d', path)
-            .attr('fill', (d, i) => color(i)); 
+        // Add labels
+        g.append('text')
+            .attr('transform', d => 'translate(${arc.centroid(d)})')
+            .attr('dy', '.35m')
+            .text(d => d.data.county); 
     }
 });
