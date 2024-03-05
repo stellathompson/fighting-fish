@@ -1,12 +1,4 @@
 
-# /*
-#  * piecharts.py
-#  * Author: Kritika Pandit
-# THIS FILE HAS A LOT OF ERRORS,
-# I WAS JUST TTRYING DIFFERNT IDEAS AND LOOKING OVER IF IT WORKS:
-#  */
-
-
 import psycopg2
 
 

@@ -1,7 +1,4 @@
-# api.py
-# author: Kritika Pandit
-#This is little try out version for the app route, i used api that luha made.
-#
+
 from operator import itemgetter
 
 import psycopg2

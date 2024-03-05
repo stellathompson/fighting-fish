@@ -1,7 +1,3 @@
-/*
- * script.js
- * Kritika Pandit
- */
 
 //Flower and Petals refer to the piechartt, each piechart is a flower with different colors(petals)
 
