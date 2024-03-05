@@ -1,6 +1,16 @@
+'''
+    main-website.py
+
+    Yeseo Jeon, Stella Thompson, Kritika Pandit, Luha Yang, Daniel Lumbu
+    March 4, 2024
+
+    Flask API to support Election Data Visualizer web application
+    that uses 2016 and 2020 election database.
+'''
+
+
 import psycopg2
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
