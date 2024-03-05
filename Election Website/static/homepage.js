@@ -1,3 +1,12 @@
+/*
+ * webapp.js
+ * Yeseo Jeon, Stella Thompson, Kritika Pandit, Luha Yang, Daniel Lumbu
+ * March 4, 2024
+ *
+ * Javascript for the homepage of the web app Election Data Visualizer.
+ */
+
+
 function surprise() {
   the_surprise = document.getElementById("BodyColor");
   the_surprise.style.color = "PaleVioletRed";
