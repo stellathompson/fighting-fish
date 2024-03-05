@@ -1,3 +1,12 @@
+/*
+    about-us-page.css
+    Yeseo Jeon, Stella Thompson, Kritika Pandit, Luha Yang, Daniel Lumbu 
+    March 5, 2024
+
+    CSS for the about us page that has a description of the authors.
+*/
+
+
 .animate {
   animation-name: fade;
   animation-duration: 5s;

@@ -1,7 +1,7 @@
 '''
     main-website.py
 
-    Yeseo Jeon, Stella Thompson, Kritika Pandit, Luha Yang, Daniel Lumbu
+    Stella Thompson, Kritika Pandit, Luha Yang, Daniel Lumbu, Yeseo Jeon
     March 4, 2024
 
     Flask API to support Election Data Visualizer web application
