@@ -1,3 +1,11 @@
+/*
+    homepage.css
+    Yeseo Jeon, Stella Thompson, Luha Yang, Daniel Lumbu, Kritika Pandit 
+    March 5, 2024
+
+    CSS for the app.py application.
+*/
+
 .animate {
   animation-name: fade;
   animation-duration: 5s;
