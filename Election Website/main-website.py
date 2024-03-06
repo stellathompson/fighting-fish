@@ -35,7 +35,7 @@ def counties(state):
     list_of_counties = cur.fetchall()
 
 
-    return render_template("select-county-page.html",  counties = list_of_counties,state = state_name )
+    return render_template("select-county-page.html",  counties = list_of_counties,state = state )
 
 @app.route('/aboutus')
 def aboutus_page():
