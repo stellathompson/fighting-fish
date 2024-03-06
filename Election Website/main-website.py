@@ -10,7 +10,8 @@
 
 
 import psycopg2
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -34,16 +35,47 @@ def counties(state):
     list_of_counties = cur.fetchall()
 
 
-    return render_template("select-county-page.html",  counties = list_of_counties)
+    return render_template("select-county-page.html",  counties = list_of_counties, state = state_name)
 
 @app.route('/aboutus')
 def aboutus_page():
     return render_template("about-us-page.html")
 
-@app.route('/results/<county>/2016')
-def results_page(county):
-    return render_template("results-page.html", countyname = county)
+@app.route('/results/<state>/<county>/2016')
+def results_page(county,state):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="panditk",
+        user="panditk",
+        password="square555cow")
+
+    cur = conn.cursor()
+    sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
+    cur.execute(sql)
+    trump = cur.fetchall()
+    
+    # Given numbers
+    number1 = trump[0]
+    number2 = trump[1]
+
+    # Calculate the total
+    total = number1 + number2
+
+    # Calculate the percentages
+    percentage1 = (number1 / total) * 100
+    percentage2 = (number2 / total) * 100
+
+    percentages = [percentage1,percentage2]
+
+    return render_template("index.html", votesdiv = percentages)
 
 if __name__ == '__main__':
     my_port = 5129
     app.run(host='0.0.0.0', port = my_port)
+
+
+
+
+    
+
