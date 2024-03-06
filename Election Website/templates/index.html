@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Data Visualizer</title>
+    <link rel="stylesheet" heref="/static/piechart.css">
+    <script src="/static/pychart.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+  <!-- Dropdown for selecting the year -->
+  <label for="yearSelector">Select Year:</label>
+  <select id="yearSelector" onchange="updateChart()">
+    <option value="2016">2016</option>
+    <option value="2020">2020</option>  
+  </select>
+
+  <!-- Container for the pie chart -->
+    <div id="pieChart"></div>
+
+</body>
+</html>
