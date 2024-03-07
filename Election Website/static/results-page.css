@@ -20,7 +20,9 @@
   .MenuBar{
     display: flex;
     justify-content: space-between;
+    color: white;
     align-items: center;
+    text-align: center;
   }
   
   .ButtonsContainer{
