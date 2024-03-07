@@ -42,6 +42,15 @@
     text-align: center;
   }
   
+  .Body{
+    line-height: 1.6;
+    color: white;
+    margin-left: 300px;
+    margin-right: 300px;
+    font-family: "Trebuchet MS", sans-serif;	
+    text-align: center;
+  }
+  
   .Button button{
     background-color: transparent;
     color: white;
