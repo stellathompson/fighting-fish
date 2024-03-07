@@ -20,7 +20,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: red;
 }
 
 .ButtonsContainer{
@@ -36,8 +35,7 @@
 }
 
 .Header{
-  color: white; /* Keeps text color white */
-  background-color: red; /* Sets background color to red */
+  color: white;
   font-family: Impact, fantasy;	
   font-size: 70px;
   text-align: center;

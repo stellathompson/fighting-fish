@@ -21,17 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
   }
-
-  h1 {
-    color: white;
-  }
-
-   h2 {
-    color: white;
-  }
-
   
   .ButtonsContainer{
     margin-right: 30px;
