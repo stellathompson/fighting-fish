@@ -54,7 +54,7 @@ function createPieChart(containerId, data) {
         .outerRadius(radius - 10)
         .innerRadius(0);
     
-    // For labeling the piecharts outside the chart:
+    // For labeling the pie charts outside the chart:
     var outerArc = d3.arc()
         .innerRadius(labelRadius)
         .outerRadius(labelRadius);
@@ -79,14 +79,14 @@ function createPieChart(containerId, data) {
         .attr("d", arc)
         .style("fill", function(d) { return color(d.data.category); });
 
-    //This is for drawing lines from picharts to the labels:
+    // This is for drawing lines from pie charts to the labels:
     g.append("polyline")
         .attr("stroke", "black")
         .style("fill", "none")
         .attr("stroke-width", 1)
         .attr("points", function(d) {
-            var posA = arc.centroid(d) // line start
-            var posB = outerArc.centroid(d) // line end
+            var posA = arc.centroid(d); // line start
+            var posB = outerArc.centroid(d); // line end
             var posC = outerArc.centroid(d); // slightly changes to make line orthogonal
             posC[0] = labelRadius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
             return [posA, posB, posC];
@@ -109,7 +109,6 @@ function createPieChart(containerId, data) {
         return d.startAngle + (d.endAngle - d.startAngle) / 2;
     }
 }
-
 
 // Call the function to create pie charts
 createPieChart("#flower1", demographicsData);
