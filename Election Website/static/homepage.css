@@ -39,16 +39,6 @@
   font-family: Impact, fantasy;	
   font-size: 70px;
   text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 88px;
-  z-index: 10;
-  background:#F24B59 ;
-  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
 }
 
 .Body{
