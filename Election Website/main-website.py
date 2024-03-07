@@ -10,13 +10,9 @@
 
 
 import psycopg2
-<<<<<<< HEAD
-from flask import Flask, render_template
-=======
 from flask import Flask
 from flask import render_template
 import math
->>>>>>> b6102ad87342d079d4f65b3410e157fa30f3fd62
 
 app = Flask(__name__)
 
@@ -84,12 +80,6 @@ def results_page(county,state):
     asian = dermographics[0][4]
     pacific = dermographics[0][5]
 
-<<<<<<< HEAD
-    return render_template("index.html", votesdiv = percentages)
-
-if __name__ == '__main__':
-    my_port = 5129
-=======
     total2 = hispanic + white + black + native + asian + pacific
 
     hispanic_percentage = (hispanic / total2) * 100
@@ -107,7 +97,6 @@ if __name__ == '__main__':
     return render_template("index.html", votesdiv = percentages, dermo= percentages2)
 if __name__ == '__main__':
     my_port = 5126
->>>>>>> b6102ad87342d079d4f65b3410e157fa30f3fd62
     app.run(host='0.0.0.0', port = my_port)
 
 
