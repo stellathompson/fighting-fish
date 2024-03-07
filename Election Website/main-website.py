@@ -10,8 +10,7 @@
 
 
 import psycopg2
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -35,7 +34,7 @@ def counties(state):
     list_of_counties = cur.fetchall()
 
 
-    return render_template("select-county-page.html",  counties = list_of_counties,state = state_name )
+    return render_template("select-county-page.html",  counties = list_of_counties, state = state_name)
 
 @app.route('/aboutus')
 def aboutus_page():
@@ -54,10 +53,10 @@ def results_page(county,state):
     sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
     cur.execute(sql)
     trump = cur.fetchall()
-
+    
     # Given numbers
-    number1 = trump[0][0]
-    number2 = trump[0][1]
+    number1 = trump[0]
+    number2 = trump[1]
 
     # Calculate the total
     total = number1 + number2
@@ -69,8 +68,10 @@ def results_page(county,state):
     percentages = [percentage1,percentage2]
 
     return render_template("index.html", votesdiv = percentages)
+
 if __name__ == '__main__':
-    my_port = 5126
+    my_port = 5129
+    app.run(host='0.0.0.0', port = my_port)
 
 
 
