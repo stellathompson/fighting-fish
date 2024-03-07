@@ -10,7 +10,13 @@
 
 
 import psycopg2
+<<<<<<< HEAD
 from flask import Flask, render_template
+=======
+from flask import Flask
+from flask import render_template
+import math
+>>>>>>> b6102ad87342d079d4f65b3410e157fa30f3fd62
 
 app = Flask(__name__)
 
@@ -50,6 +56,7 @@ def results_page(county,state):
         password="square555cow")
 
     cur = conn.cursor()
+    # getting the 2016 results for the state and county
     sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
     cur.execute(sql)
     trump = cur.fetchall()
@@ -65,12 +72,42 @@ def results_page(county,state):
     percentage1 = (number1 / total) * 100
     percentage2 = (number2 / total) * 100
 
-    percentages = [percentage1,percentage2]
+    percentages = [round(percentage1),round(percentage2)]
+    # getting Dermographics
+    sql2 = f"SELECT hispanic, white, black, native, asian, pacific FROM elections WHERE county = '{county}' AND state = '{state}';"
+    cur.execute(sql2)
+    dermographics = cur.fetchall()
+    hispanic = dermographics[0][0]
+    white = dermographics[0][1]
+    black = dermographics[0][2]
+    native = dermographics[0][3]
+    asian = dermographics[0][4]
+    pacific = dermographics[0][5]
 
+<<<<<<< HEAD
     return render_template("index.html", votesdiv = percentages)
 
 if __name__ == '__main__':
     my_port = 5129
+=======
+    total2 = hispanic + white + black + native + asian + pacific
+
+    hispanic_percentage = (hispanic / total2) * 100
+    white_percentage = (white / total2) * 100
+    black_percentage = (black / total2) * 100
+    native_percentage = (native / total2) * 100
+    asian_percentage = (asian / total2) * 100
+    pacific_percentage = (pacific / total2) * 100
+
+    percentages2 =[hispanic_percentage,white_percentage,black_percentage,native_percentage,asian_percentage,pacific_percentage]
+    
+
+
+
+    return render_template("index.html", votesdiv = percentages, dermo= percentages2)
+if __name__ == '__main__':
+    my_port = 5126
+>>>>>>> b6102ad87342d079d4f65b3410e157fa30f3fd62
     app.run(host='0.0.0.0', port = my_port)
 
 

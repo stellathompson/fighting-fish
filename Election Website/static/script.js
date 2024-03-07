@@ -19,11 +19,12 @@
 // REFER TO PIECHARTS.PY TO SEE SOME HINTS.
 // trump16, clinton16, trump20, biden20
 var demographicsData = [
-    { category: 'hispanic', value: 30 },
-    { category: 'white', value: 10},
-    { category: 'black', value: 20 },
-    { category: 'native', value: 20 },
-    { category: 'pasific', value: 20 }
+    { category: 'hispanic', value: dermo[0] },
+    { category: 'white', value: dermo[1]},
+    { category: 'black', value: dermo[2]},
+    { category: 'native', value: dermo[3]},
+    { category: 'asian', value: dermo[4]},
+    { category: 'pasific', value: dermo[5]}
 ];
 
 
@@ -32,8 +33,8 @@ var demographicsData = [
 // nEED TO BE CAREFUL ON WHICH YEAR? 16 OR 2, NEED TO ADJUST THE SQL ACCORDINLGY
 
 var votingResultsData = [
-    { category: 'Trump', value: votesdiv[0] },
-    { category: 'Clinton', value: votesdiv[1] }
+    { category: 'Trump ' + votesdiv[0] + '%' , value: votesdiv[0] },
+    { category: 'Clinton ' + votesdiv[1] + '%', value: votesdiv[1] }
 
 ];
 
