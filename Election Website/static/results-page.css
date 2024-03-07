@@ -36,7 +36,7 @@
     font-family: Impact, fantasy;	
     text-align: center;
     border: #F24B59;
-    border-radius: calc(0.2);
+    border-top: 0cm;
   }
   
   .Header{
@@ -45,7 +45,15 @@
     font-size: 70px;
     text-align: center;
   }
-  
+
+  h1 {
+    color: white;
+  }
+
+  h2 {
+    color: white;
+  }
+
   .Button button{
     background-color: transparent;
     color: white;
