@@ -43,21 +43,15 @@ var votingResultsData = [
 // foR THIS, I GOT HELP FROM A GITHUB PIECHART PROJECT ON FLOWERS, THEY HAD VERY NICE
 // PIE-CHARTS, THESE ARE LITTLE  BIT WEIIRD:((()))
 function createPieChart(containerId, data) {
-    var width = 360;
-    var height = 360;
+    var width = 300;
+    var height = 300;
     var radius = Math.min(width, height) / 2;
-    var labelRadius = radius * 1.3;
 
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
     var arc = d3.arc()
         .outerRadius(radius - 10)
         .innerRadius(0);
-    
-    // For labeling the pie charts outside the chart:
-    var outerArc = d3.arc()
-        .innerRadius(labelRadius)
-        .outerRadius(labelRadius);
 
     var pie = d3.pie()
         .sort(null)
@@ -79,35 +73,10 @@ function createPieChart(containerId, data) {
         .attr("d", arc)
         .style("fill", function(d) { return color(d.data.category); });
 
-    // This is for drawing lines from pie charts to the labels:
-    g.append("polyline")
-        .attr("stroke", "black")
-        .style("fill", "none")
-        .attr("stroke-width", 1)
-        .attr("points", function(d) {
-            var posA = arc.centroid(d); // line start
-            var posB = outerArc.centroid(d); // line end
-            var posC = outerArc.centroid(d); // slightly changes to make line orthogonal
-            posC[0] = labelRadius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
-            return [posA, posB, posC];
-        });
-
-   // Moving the label positioning to the outer arc
     g.append("text")
-        .attr("transform", function(d) {
-            var pos = outerArc.centroid(d);
-            pos[0] = labelRadius * (midAngle(d) < Math.PI ? 1 : -1);
-            return "translate("+ pos +")";
-        })
-        .style("text-anchor", function(d) {
-            return midAngle(d) < Math.PI ? "start" : "end";
-        })
-        .text(function(d) { return d.data.category; });
-
-    // Function to calculate the mid angle of the slice
-    function midAngle(d) {
-        return d.startAngle + (d.endAngle - d.startAngle) / 2;
-    }
+        .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+        .attr("dy", ".35em")
+        .text (function(d) { return d.data.category; });
 }
 
 // Call the function to create pie charts

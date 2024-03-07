@@ -27,28 +27,5 @@
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="/static/script.js" defer></script>
-
-
-    <script>
-        // Define demographics data
-        var demographicsData = [
-            { category: 'Hispanic: ' + dermo[0] + '%', value: dermo[0] },
-            { category: 'White: ' + dermo[1] + '%', value: dermo[1] },
-            { category: 'Black: ' + dermo[2] + '%', value: dermo[2] },
-            { category: 'Native: ' + dermo[3] + '%', value: dermo[3] },
-            { category: 'Asian: ' + dermo[4] + '%', value: dermo[4] },
-            { category: 'Pacific: ' + dermo[5] + '%', value: dermo[5] }
-        ];
-    
-        // Define voting results data
-        var votingResultsData = [
-            { category: 'Trump: ' + votesdiv[0] + '%', value: votesdiv[0] },
-            { category: 'Clinton: ' + votesdiv[1] + '%', value: votesdiv[1] }
-        ];
-    
-        // Call the function to create pie charts
-        createPieChart("#flower1", demographicsData);
-        createPieChart("#flower2", votingResultsData);
-    </script>
 </body>
 </html>
