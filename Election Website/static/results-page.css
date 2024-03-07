@@ -35,6 +35,8 @@
     color: white;
     font-family: Impact, fantasy;	
     text-align: center;
+    border: #F24B59;
+    border-radius: calc(0.2);
   }
   
   .Header{
