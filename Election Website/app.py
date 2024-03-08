@@ -14,9 +14,8 @@ import os
 import webbrowser
 from flask import Flask, render_template
 import math
-from threading import Timer
-
-import time
+import threading
+import webbrowser
 
 app = Flask(__name__)
 
@@ -121,7 +120,7 @@ def open_browser(website):
 
 if __name__ == '__main__':
     my_port = input("Enter your port number: ")
-    website = "stearns.mathcs.carleton.edu:" + my_port + "/"
+    url = "http://stearns.mathcs.carleton.edu:{}/".format(my_port)
 
-    Timer(1, open_browser, [website]).start()
-    app.run(host='0.0.0.0', port=my_port)
+    threading.Timer(1.25, lambda: webbrowser.open(url)).start()
+    app.run(host='0.0.0.0', port=my_port, debug=False)
