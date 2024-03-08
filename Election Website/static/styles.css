@@ -47,15 +47,6 @@ body, html {
   text-align: center;
 }
 
-.Body{
-  line-height: 1.6;
-  color: white;
-  margin-left: 300px;
-  margin-right: 300px;
-  font-family: "Trebuchet MS", sans-serif;	
-  text-align: center;
-}
-
 .Button button{
   background-color: transparent;
   color: white;
@@ -75,29 +66,32 @@ body, html {
 }
 
 .container {
-    display: flex;
-    text-align: center;
-    background-color: rgb(206, 196, 255);
-    border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(206, 196, 255);
+  border-radius: 8px;
+  height: 100vh;
 }
 
 .flower {
-    margin: 20px;
-    position: relative;
-    border-radius: 300px;
-    height: 300px;
-    width: 300px;
-    overflow: hidden;
+  margin: 20px;
+  position: relative;
+  border-radius: 300px;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
 }
 
 .petal {
-    position: absolute;
-    left: 150px;
-    top: -150px;
-    background: lavender;
-    height: 300px;
-    width: 300px;
-    box-shadow: 0 0 60px -5px black;
-    transform-origin: bottom left;
+  position: absolute;
+  left: 150px;
+  top: -150px;
+  background: lavender;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 0 60px -5px black;
+  transform-origin: bottom left;
 }
 
