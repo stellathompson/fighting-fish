@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Top States</title>
+</head>
+<body>
+    <div class="electionContainer">
+        <h1>Top 5 States with Highest Vote Percentile</h1>
+        <div id="candidateSelection">
+            <label for="year">Select Year:</label>
+            <select id="year">
+                <option value="2016">2016</option>
+                <option value="2020">2020</option>
+            </select>
+
+            <button onclick="fetchTopStates()">Show Top States</button>
+        </div>
+
+        <div id="topStatesCharts"></div>
+    </div>
+    &nbsp &nbsp &nbsp &nbsp &nbsp
+    <div class="demographicContainer">
+        <h1>State Demographic</h1>
+        <div id="demographicData"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="top-states-page.js" defer></script>
+</body>
+</html>

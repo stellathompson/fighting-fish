@@ -6,11 +6,12 @@
 from flask import Flask, render_template, jsonify
 import psycopg2
 import os
+import webbrowser
 
 app = Flask(__name__)
 
 # To test hompage
-# http://stearns.mathcs.carleton.edu:5137/
+# http://stearns.mathcs.carleton.edu:<port number>/
 @app.route('/')
 def load_hompage():
     return render_template('homepage.html')
@@ -49,6 +50,21 @@ def get_pie_data(state):
     data = get_data(sql)
     return jsonify(data)
 
+# Route to show top 10 states with highest vote percentile for each candidate in each year
+@app.route('/top_states', methods=['GET'])
+def top_states_page():
+    return render_template('top-states-page.html')
+
+@app.route('/api/top_states/<year>', methods=['GET'])
+def get_top_states_data(year):
+    candidate = name+str(int(year)-2000)
+    sql = f"SELECT state, state_code, {candidate} FROM election_state ORDER BY {candidate} DESC LIMIT 5;"
+    election_data = get_data(sql)
+    return jsonify(election_data)
+
+
 if __name__ == '__main__':
-    my_port = 5137
+    my_port = input("Enter your port number")
     app.run(host='0.0.0.0', port=my_port)
+    website = "http://stearns.mathcs.carleton.edu:" + my_port + "/"
+    webbrowser.open(website)
