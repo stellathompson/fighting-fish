@@ -15,6 +15,7 @@ import webbrowser
 from flask import Flask
 from flask import render_template
 import math
+import threading
 
 app = Flask(__name__)
 
@@ -112,10 +113,17 @@ def get_top_states_data(year):
     sql = f"SELECT state, state_code, {candidate} FROM election_state ORDER BY {candidate} DESC LIMIT 5;"
     election_data = get_data(sql)
     return jsonify(election_data)
+    
 
+def run_flask_app(my_port):
+    app.run(host='0.0.0.0', port=my_port)
 
 if __name__ == '__main__':
-    my_port = input("Enter your port number")
-    app.run(host='0.0.0.0', port=my_port)
+    my_port = input("Enter your port number: ")
+    
+    flask_thread = threading.Thread(target=run_flask_app(my_port))
+    flask_thread.start()
+
     website = "stearns.mathcs.carleton.edu:" + my_port + "/"
     webbrowser.open(website)
+    flask_thread.join()
