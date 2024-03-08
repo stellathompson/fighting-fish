@@ -123,5 +123,5 @@ if __name__ == '__main__':
     my_port = input("Enter your port number: ")
     website = "stearns.mathcs.carleton.edu:" + my_port + "/"
 
-    Timer(1, open_browser(website)).start()
+    Timer(1, open_browser, [website]).start()
     app.run(host='0.0.0.0', port=my_port)
