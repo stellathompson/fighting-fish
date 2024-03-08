@@ -27,53 +27,66 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px; 
+  padding: 20px;
 }
 
+.ButtonsContainer {
+  display: flex;
+}
 
 .RunningHead {
   color: white;
   font-family: Impact, fantasy;
-  margin-left: 0; 
+  margin-left: 30px;
 }
-
 
 .Header {
   color: white;
   font-family: Impact, fantasy;
   font-size: 70px;
   text-align: center;
-  flex-grow: 1; 
 }
 
-.Button button {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  font-family: "Trebuchet MS", sans-serif;
-  margin-left: 0; /* Removed */
-  transition-duration: 0.3s;
-}
-
-
-.Button button:hover {
-  background-color: white;
+.label {
   color: black;
-  border: 2px solid white;
-  font-family: "Trebuchet MS", sans-serif;
-  margin-left: 0; 
-  transition-duration: 0.3s;
+  font-family: Impact, fantasy;;
+  font-size: 30px;
+  text-align: center;
 }
-
 
 .container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: rgb(206, 196, 255);
   border-radius: 8px;
   height: 100vh;
+}
+
+.flower {
+  margin: 20px;
+  position: relative;
+  border-radius: 300px;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  left: 150px;
+  top: -150px;
+  background: lavender;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 0 60px -5px black;
+  transform-origin: bottom left;
+}
+
+.flower-container {
+  display: flex;
+  justify-content: center;
 }
 
