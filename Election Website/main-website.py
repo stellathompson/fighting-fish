@@ -31,7 +31,7 @@ def counties(state):
 
     cur = conn.cursor()
     state_name = state.upper()
-    sql = f"SELECT county FROM elections WHERE state = '{state_name}';"
+    sql = f"SELECT county FROM elections WHERE state = '{state_name}' AND trump16 IS NOT NULL AND white IS NOT NULL;"
     cur.execute(sql)
     list_of_counties = cur.fetchall()
 
