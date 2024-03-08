@@ -12,10 +12,11 @@
 import psycopg2
 import os
 import webbrowser
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 import math
 import threading
+from threading import Timer
+
 import time
 
 app = Flask(__name__)
@@ -116,17 +117,12 @@ def get_top_states_data(year):
     return jsonify(election_data)
     
 
-def run_flask_app(my_port):
-    app.run(host='0.0.0.0', port=my_port)
-
+def open_browser(website):
+    webbrowser.open_new(website)
+    
 if __name__ == '__main__':
     my_port = input("Enter your port number: ")
-    
-    flask_thread = threading.Thread(target=run_flask_app(my_port))
-    flask_thread.start()
-
-    time.sleep(2)
-
     website = "stearns.mathcs.carleton.edu:" + my_port + "/"
-    webbrowser.get("google-chrome").open(website)
-    flask_thread.join()
+
+    Timer(1, open_browser(website)).start()
+    app.run(host='0.0.0.0', port=my_port)
