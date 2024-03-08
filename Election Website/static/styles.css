@@ -22,76 +22,58 @@ body, html {
   to {color: white;}
 }
 
-.MenuBar{
+
+.MenuBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px; 
 }
 
-.ButtonsContainer{
-  margin-right: 30px;
-  display: flex;
-}
 
-.RunningHead{
-  margin-left: 30px;
+.RunningHead {
   color: white;
-  font-family: Impact, fantasy;	
-  text-align: left;
+  font-family: Impact, fantasy;
+  margin-left: 0; 
 }
 
-.Header{
+
+.Header {
   color: white;
-  font-family: Impact, fantasy;	
+  font-family: Impact, fantasy;
   font-size: 70px;
   text-align: center;
+  flex-grow: 1; 
 }
 
-.Button button{
+.Button button {
   background-color: transparent;
   color: white;
   border: 2px solid white;
   font-family: "Trebuchet MS", sans-serif;
-  margin-left: 10px;
+  margin-left: 0; /* Removed */
   transition-duration: 0.3s;
 }
-  
-.Button button:hover{
+
+
+.Button button:hover {
   background-color: white;
   color: black;
   border: 2px solid white;
   font-family: "Trebuchet MS", sans-serif;
-  margin-left: 10px;
+  margin-left: 0; 
   transition-duration: 0.3s;
 }
 
+
 .container {
   display: flex;
+  flex-direction: column; 
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
   background-color: rgb(206, 196, 255);
   border-radius: 8px;
   height: 100vh;
-}
-
-.flower {
-  margin: 20px;
-  position: relative;
-  border-radius: 300px;
-  height: 300px;
-  width: 300px;
-  overflow: hidden;
-}
-
-.petal {
-  position: absolute;
-  left: 150px;
-  top: -150px;
-  background: lavender;
-  height: 300px;
-  width: 300px;
-  box-shadow: 0 0 60px -5px black;
-  transform-origin: bottom left;
 }
 
