@@ -16,6 +16,8 @@ from flask import Flask
 from flask import render_template
 import math
 import threading
+import threading
+import time
 
 app = Flask(__name__)
 
@@ -124,6 +126,8 @@ if __name__ == '__main__':
     flask_thread = threading.Thread(target=run_flask_app(my_port))
     flask_thread.start()
 
+    time.sleep(2)
+
     website = "stearns.mathcs.carleton.edu:" + my_port + "/"
-    webbrowser.get("safari").open(website)
+    subprocess.run(["open", "-a", "Safari", website])
     flask_thread.join()
