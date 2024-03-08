@@ -1,13 +1,11 @@
 /*style.css
-/* Author: Kritika Pandit */ 
+/* Author: Kritika Pandit and Stella Thompson */ 
 
 
 body, html {
     height: 100%;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-image: url('../static/Background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;  
@@ -16,7 +14,7 @@ body, html {
 
 .container {
     display: flex;
-    background-color: bisque;
+    background-color: rgb(206, 196, 255);
     border-radius: 8px;
 }
 
