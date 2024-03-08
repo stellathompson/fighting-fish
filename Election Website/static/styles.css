@@ -3,90 +3,76 @@
 
 
 body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    background-image: url('../static/Background.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  background-image: url('../static/Background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
 }
 
 .animate {
-  animation-name: fade;
-  animation-duration: 5s;
+animation-name: fade;
+animation-duration: 5s;
 }
 
 @keyframes fade {
-  from {color: transparent;}
-  to {color: white;}
+from {color: transparent;}
+to {color: white;}
 }
 
 
 .MenuBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px; 
 }
 
-.ButtonsContainer {
-  display: flex;
-}
 
 .RunningHead {
-  color: white;
-  font-family: Impact, fantasy;
-  margin-left: 30px;
+color: white;
+font-family: Impact, fantasy;
+margin-left: 0; 
 }
+
 
 .Header {
-  color: white;
-  font-family: Impact, fantasy;
-  font-size: 70px;
-  text-align: center;
+color: white;
+font-family: Impact, fantasy;
+font-size: 70px;
+text-align: center;
+flex-grow: 1; 
 }
 
-.label {
-  color: black;
-  font-family: Impact, fantasy;;
-  font-size: 30px;
-  text-align: center;
+.Button button {
+background-color: transparent;
+color: white;
+border: 2px solid white;
+font-family: "Trebuchet MS", sans-serif;
+margin-left: 0; 
+transition-duration: 0.3s;
 }
+
+
+.Button button:hover {
+background-color: white;
+color: black;
+border: 2px solid white;
+font-family: "Trebuchet MS", sans-serif;
+margin-left: 0; 
+transition-duration: 0.3s;
+}
+
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: rgb(206, 196, 255);
-  border-radius: 8px;
-  height: 100vh;
+display: flex;
+flex-direction: column; 
+justify-content: center;
+align-items: center;
+text-align: center;
+background-color: rgb(206, 196, 255);
+border-radius: 8px;
+height: 100vh;
 }
-
-.flower {
-  margin: 20px;
-  position: relative;
-  border-radius: 300px;
-  height: 300px;
-  width: 300px;
-  overflow: hidden;
-}
-
-.petal {
-  position: absolute;
-  left: 150px;
-  top: -150px;
-  background: lavender;
-  height: 300px;
-  width: 300px;
-  box-shadow: 0 0 60px -5px black;
-  transform-origin: bottom left;
-}
-
-.flower-container {
-  display: flex;
-  justify-content: center;
-}
-
