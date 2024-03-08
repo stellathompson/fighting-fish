@@ -39,9 +39,10 @@ def counties(state):
     sql = f"SELECT state FROM stateabb WHERE abbreviation = '{state_name}';"
     cur.execute(sql)
     state_fullname = cur.fetchone()
+    state_fullname = state_fullname[1:-2]
 
 
-    return render_template("select-county-page.html",  counties = list_of_counties, state = state_fullname )
+    return render_template("select-county-page.html",  counties = list_of_counties, state = state_name, fullstate = state_fullname )
 
 @app.route('/aboutus')
 def aboutus_page():
