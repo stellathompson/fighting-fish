@@ -117,5 +117,5 @@ def get_top_states_data(year):
 if __name__ == '__main__':
     my_port = input("Enter your port number")
     app.run(host='0.0.0.0', port=my_port)
-    website = "http://stearns.mathcs.carleton.edu:" + my_port + "/"
+    website = "stearns.mathcs.carleton.edu:" + my_port + "/"
     webbrowser.open(website)
