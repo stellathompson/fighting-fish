@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="/static/select-county-page.css">
 <style>
 body {
   background-image: url('../static/Background.png');
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed;  
   background-size: cover;
 }
 </style>
 </head>
 <body>
 
-<h2>Election Data Visualizer</h2>
-<h1>Find Your County's Political Preference:</h1>
+  <div class="MenuBar">
+    <h4 class="RunningHead">Election Data Visualizer</h4>
+    
+    <div class="ButtonsContainer">
+    <p class="Button">
+      <a href="/">
+        <button>
+          Home
+        </button>
+      </a>
+    </p>
+    
+    <p class="Button">
+      <a href="/aboutus">
+        <button>
+          About Us
+        </button>
+      </a>
+    </p>
+    </div>
+    </div>
+    
+    <h1 class = "Header"> Select a county in {{state}}</h1>
 
-<p class="HomeButton">
-  <a href="/">
-    <button>
-      Home
-    </button>
-  </a>
-</p>
-
-<p class="AboutUsButton">
-  <a href="/aboutus">
-    <button>
-      About Us
-    </button>
-  </a>
-</p>
+    <p class="Body">
+      Now, select a county from {{state}} to see how Trump and Clinton performed in 2016. <br><br><br>
+    </p>
 
   <form action="/action_page.php">
     <label for="county">County:</label>
