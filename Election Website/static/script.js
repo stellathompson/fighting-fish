@@ -38,16 +38,18 @@ var votingResultsData = [
 
 ];
 
-// Function to create a pie chart
-
-// foR THIS, I GOT HELP FROM A GITHUB PIECHART PROJECT ON FLOWERS, THEY HAD VERY NICE
-// PIE-CHARTS, THESE ARE LITTLE  BIT WEIIRD:((()))
 function createPieChart(containerId, data) {
     var width = 300;
     var height = 300;
     var radius = Math.min(width, height) / 2;
 
-    var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+    var customColors = ['#0000FF', '#89CFF0', '#0096FF', '#6495ED', '#6F8FAF', '#191970', '#B6D0E2', '#4682B4', '#0818A8', '#008080'];
+
+    var color = d3.scaleOrdinal()
+        .domain(data.map(function(d) { return d.category; }))
+        .range(customColors);
+
 
     var arc = d3.arc()
         .outerRadius(radius - 10)
