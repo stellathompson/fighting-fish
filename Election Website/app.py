@@ -14,7 +14,6 @@ import os
 import webbrowser
 from flask import Flask, render_template
 import math
-import threading
 from threading import Timer
 
 import time
@@ -119,7 +118,7 @@ def get_top_states_data(year):
 
 def open_browser(website):
     webbrowser.open_new(website)
-    
+
 if __name__ == '__main__':
     my_port = input("Enter your port number: ")
     website = "stearns.mathcs.carleton.edu:" + my_port + "/"
