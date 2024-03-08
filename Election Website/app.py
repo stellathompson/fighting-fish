@@ -125,5 +125,5 @@ if __name__ == '__main__':
     flask_thread.start()
 
     website = "stearns.mathcs.carleton.edu:" + my_port + "/"
-    webbrowser.open(website)
+    webbrowser.get("safari").open(website)
     flask_thread.join()
