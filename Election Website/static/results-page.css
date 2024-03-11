@@ -6,7 +6,7 @@
     CSS for the page that shows the results.
 */
 
-/* body, html {
+ body, html {
   height: 100%;
   margin: 0;
   display: flex;
@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
-} */
+} 
   
 
 .MenuBar{
