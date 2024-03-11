@@ -5,6 +5,16 @@
 
     CSS for the page that shows the results.
 */
+
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  background-image: url('../static/Background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
   
 .MenuBar{
   display: flex;
