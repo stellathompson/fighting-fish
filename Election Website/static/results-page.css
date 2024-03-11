@@ -17,20 +17,17 @@ body, html {
 }
   
 .MenuBar{
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
   
 .ButtonsContainer{
-  position: absolute;
   margin-right: 30px;
   display: flex;
 }
 
 .RunningHead{
-  position: absolute;
   margin-left: 30px;
   color: white;
   font-family: Impact, fantasy;	
@@ -38,16 +35,13 @@ body, html {
 }
 
 .Header{
-  position: absolute;
   color: white;
   font-family: Impact, fantasy;	
   font-size: 70px;
   text-align: center;
-  margin-top: 50px;
 }
 
 .Button button{
-  position: absolute;
   background-color: transparent;
   color: white;
   border: 2px solid white;
@@ -57,7 +51,6 @@ body, html {
 }
   
 .Button button:hover{
-  position: absolute;
   background-color: white;
   color: black;
   border: 2px solid white;
@@ -73,9 +66,9 @@ body, html {
 }
 
 .container {
-  margin-top: 40px;
+  margin-top: 90px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -85,11 +78,10 @@ body, html {
   }
 
   .keycontainer {
-    margin-top: 40px; 
-    display: flex;
-    justify-content: center;
+    position: relative;
     width: 200px;
     height: 200px;
+    margin-top: 90px; 
   }
   
   .buttonsContainer {
