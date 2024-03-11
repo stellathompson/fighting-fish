@@ -5,68 +5,49 @@
 
     CSS for the page that shows the results.
 */
+  
+.MenuBar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.ButtonsContainer{
+  margin-right: 30px;
+  display: flex;
+}
 
+.RunningHead{
+  margin-left: 30px;
+  color: white;
+  font-family: Impact, fantasy;	
+  text-align: left;
+}
 
-.animate {
-    animation-name: fade;
-    animation-duration: 5s;
-  }
-  
-  @keyframes fade {
-    from {color: transparent;}
-    to {color: white;}
-  }
-  
-  .MenuBar{
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .ButtonsContainer{
-    margin-right: 30px;
-    display: flex;
-  }
-  
-  .RunningHead{
-    margin-left: 30px;
-    color: white;
-    font-family: Impact, fantasy;	
-    text-align: center;
-    border: #F24B59;
-    border-top: 0cm;
-  }
-  
-  .Header{
-    color: white;
-    font-family: Impact, fantasy;	
-    font-size: 70px;
-    text-align: center;
-  }
+.Header{
+  color: white;
+  font-family: Impact, fantasy;	
+  font-size: 70px;
+  text-align: center;
+}
 
-
-  .Button button{
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    font-family: "Trebuchet MS", sans-serif;
-    margin-left: 10px;
-    transition-duration: 0.3s;
-    text-align: center;
-  }
-    
-  .Button button:hover{
-    background-color: white;
-    color: white;
-    border: 2px solid white;
-    font-family: "Trebuchet MS", sans-serif;
-    margin-left: 10px;
-    transition-duration: 0.3s;
-    text-align: center;
-  }
-    
+.Button button{
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-left: 10px;
+  transition-duration: 0.3s;
+}
+  
+.Button button:hover{
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  font-family: "Trebuchet MS", sans-serif;
+  margin-left: 10px;
+  transition-duration: 0.3s;
+}
 
 
   .keycontainer {

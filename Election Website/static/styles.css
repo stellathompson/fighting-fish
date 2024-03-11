@@ -1,7 +1,3 @@
-/*style.css
-/* Author: Kritika Pandit and Stella Thompson */ 
-
-
 body, html {
   height: 100%;
   margin: 0;
@@ -12,17 +8,6 @@ body, html {
   background-size: cover;
 }
 
-.animate {
-animation-name: fade;
-animation-duration: 5s;
-}
-
-@keyframes fade {
-from {color: transparent;}
-to {color: white;}
-}
-
-
 .MenuBar {
 display: flex;
 justify-content: space-between;
@@ -30,13 +15,11 @@ align-items: center;
 padding: 20px; 
 }
 
-
 .RunningHead {
 color: white;
 font-family: Impact, fantasy;
 margin-left: 0; 
 }
-
 
 .Header {
 color: white;
@@ -64,7 +47,6 @@ font-family: "Trebuchet MS", sans-serif;
 margin-left: 0; 
 transition-duration: 0.3s;
 }
-
 
 .container {
 display: flex;
