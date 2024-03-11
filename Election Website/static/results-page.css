@@ -59,11 +59,29 @@ body, html {
   transition-duration: 0.3s;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(206, 196, 255);
+  border-radius: 8px;
+  height: 100vh;
+  }
 
   .keycontainer {
     position: relative;
     width: 200px;
-    height: 200px; 
+    height: 200px;
+    margin-top: 90px; 
   }
   
   .buttonsContainer {
