@@ -8,7 +8,7 @@
  */
 
 var votingResultsColors = ['#856088', '#78184A']; 
-var demographicsColors = ['#D8BFD8', '#5a3749', '#6d296d', '#7260a9', '#B768A2', '#86608E']; 
+var demographicsColors = ['#7F00FF', '#5a3749', '#6d296d', '#7260a9', '#B768A2', '#483248']; 
 
 
 // Pie chart for the Voting Results in 2016 elections
