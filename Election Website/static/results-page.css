@@ -1,9 +1,4 @@
-body {
-  background-image: url('../static/Background.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
-}
+
 
 .MenuBar{
   display: flex;
