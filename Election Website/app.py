@@ -73,7 +73,7 @@ def load_results_page(county, state, year):
     # Calculating percentages
     percentages_pop = calculate_demographics_percentages(demographics)
     
-    return render_template("results-page.html", votesdiv = percentages_vote, demo= percentages_pop, candidate_name = candidate_name)
+    return render_template("results-page.html", votesdiv = percentages_vote, demo= percentages_pop, candidate_name = candidate_name, year = year)
 
 def calculate_vote_percentages(vote_results):
     # Given numbers
