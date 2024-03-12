@@ -48,7 +48,7 @@ def counties(state):
 def aboutus_page():
     return render_template("about-us-page.html")
 
-@app.route('/results/<state>/<county>/2016')
+@app.route('/results/<state>/<county>/<year>')
 def results_page(county,state):
     conn = psycopg2.connect(
         host="localhost",
@@ -58,10 +58,16 @@ def results_page(county,state):
         password="square555cow")
 
     cur = conn.cursor()
+    
     # getting the 2016 results for the state and county
-    sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
-    cur.execute(sql)
-    trump = cur.fetchall()
+    if "2016" == year:
+        sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
+        cur.execute(sql)
+        trump = cur.fetchall()
+    else:
+        sql = f"SELECT trump20, biden20 FROM elections WHERE county = '{county}' AND state = '{state}';"
+        cur.execute(sql)
+        trump = cur.fetchall()
 
     # Given numbers
     number1 = trump[0][0]
