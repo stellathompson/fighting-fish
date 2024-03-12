@@ -42,7 +42,6 @@ def counties(state):
     cur.execute(sql)
     list_of_counties = cur.fetchall()
 
-
     return render_template("select-county-page.html",  counties = list_of_counties, state = state )
 
 @app.route('/aboutus')
@@ -120,7 +119,10 @@ def open_browser(website):
 
 if __name__ == '__main__':
     my_port = input("Enter your port number: ")
+    print("Open the web browser using your port number.")
+    print("Here's the link:")
     url = "http://stearns.mathcs.carleton.edu:{}/".format(my_port)
+    print(url)
 
-    threading.Timer(1.25, lambda: webbrowser.open(url)).start()
+    #threading.Timer(1.25, lambda: webbrowser.open(url)).start()
     app.run(host='0.0.0.0', port=my_port, debug=False)

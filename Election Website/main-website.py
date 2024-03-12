@@ -104,9 +104,3 @@ def results_page(county,state):
 if __name__ == '__main__':
     my_port = 5126
     app.run(host='0.0.0.0', port = my_port)
-
-
-
-
-    
-
