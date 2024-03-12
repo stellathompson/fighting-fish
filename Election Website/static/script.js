@@ -64,11 +64,39 @@ function createPieChart(containerId, data, customColors) {
     g.append("path")
         .attr("d", arc)
         .style("fill", function(d) { return color(d.data.category); });
+         // Add text and lines outside the pie chart
+    var text = svg.selectAll(".text")
+    .data(data)
+    .enter().append("text")
+    .attr("transform", function(d) {
+        var pos = arc.centroid(d);
+        pos[0] = radius * (midAngle(d) < Math.PI ? 1.2 : -1.2); // Adjust position based on angle
+        return "translate(" + pos + ")";
+    })
+    .attr("dy", ".35em")
+    .style("text-anchor", function(d) {
+        return (midAngle(d) < Math.PI ? "start" : "end"); // Align text based on angle
+    })
+    .text(function(d) { return d.data.category; });
 
-    g.append("text")
-        .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
-        .attr("dy", ".35em")
-        .text (function(d) { return d.data.category; });
+// Add lines connecting text to pie slices
+var lines = svg.selectAll(".line")
+    .data(data)
+    .enter().append("line")
+    .attr("x1", function(d) { return arc.centroid(d)[0]; })
+    .attr("y1", function(d) { return arc.centroid(d)[1]; })
+    .attr("x2", function(d) {
+        var pos = arc.centroid(d);
+        pos[0] = radius * (midAngle(d) < Math.PI ? 1.05 : -1.05); // Adjust position based on angle
+        return pos[0];
+    })
+    .attr("y2", function(d) {
+        var pos = arc.centroid(d);
+        pos[1] = radius * (midAngle(d) < Math.PI ? 1.05 : -1.05); // Adjust position based on angle
+        return pos[1];
+    })
+    .attr("stroke", "black")
+    .attr("stroke-width", 1);
 }
 
 // Calling the function to create pie charts
