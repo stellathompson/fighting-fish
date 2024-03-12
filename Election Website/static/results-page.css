@@ -68,20 +68,20 @@
 .container {
   margin-top: 90px;
   display: flex;
-  flex-direction: column; 
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  background-color: rgb(206, 196, 255);
   border-radius: 8px;
   height: 100vh;
+  position: relative;
   }
 
   .keycontainer {
-    position: relative;
+    position: absolute;
     width: 200px;
     height: 200px;
     margin-top: 90px; 
+    right: 20px; 
   }
   
   .buttonsContainer {
