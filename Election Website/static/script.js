@@ -8,7 +8,6 @@
  */
 
 
-// Defining variables that holds the color for each of the data in pie charts
 var demographicsColors = ['#78184A', '#5a3749', '#FAE6FA', '#BDB5D5', '#B768A2', '#86608E']; 
 var votingResultsColors = ['#856088', '#D8BFD8']; 
 
@@ -72,5 +71,5 @@ function createPieChart(containerId, data, customColors) {
 }
 
 // Calling the function to create pie charts
-createPieChart("#flower1", demographicsData);
-createPieChart("#flower2", votingResultsData);
+createPieChart("#flower1", demographicsData, demographicsColors);
+createPieChart("#flower2", votingResultsData, votingResultsColors);
