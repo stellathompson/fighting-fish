@@ -73,6 +73,12 @@
     position: relative;
     }
 
+.flower {
+    text-align: center;
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
   .keycontainer {
   margin-right: 90px;
     position: relative;
