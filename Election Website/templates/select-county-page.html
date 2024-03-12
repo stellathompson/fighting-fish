@@ -50,9 +50,18 @@ body {
         {% endfor %}
     </select>
 
+  <form action="/action_page.php">
+    <label for="year">State:</label>
+    <select name="year" id="year">
+      <option value="">Select a year</option>
+      <option value="2016">2016</option>
+      <option value="2020">2020</option>
+    </select>
+
   <br><br>
   <input type="button" value="Go!" onclick="handleSubmit()">
-</form>
+  </form> 
+    
 
   <script>
     function handleSubmit() {
