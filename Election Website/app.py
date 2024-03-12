@@ -47,11 +47,18 @@ def load_select_county_page(state):
 def load_aboutus_page():
     return render_template("about-us-page.html")
 
-@app.route('/results/<state>/<county>/2016')
-def load_results_page(county, state):
+@app.route('/results/<state>/<county>/<year>')
+def load_results_page(county, state, year):
+
+    if year == '2016':
+        candidate_rep = 'trump16'
+        candidate_dem = 'clinton16'
+    else:
+        candidate_rep = 'trump20'
+        candidate_dem = 'biden20'
 
     # Getting the 2016 vote results for the selected county
-    sql1 = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
+    sql1 = f"SELECT {candidate_rep}, {candidate_dem} FROM elections WHERE county = '{county}' AND state = '{state}';"
     vote_results = get_data(sql1)
 
     # Calculating percentages
@@ -68,17 +75,17 @@ def load_results_page(county, state):
 
 def calculate_vote_percentages(vote_results):
     # Given numbers
-    trump16 = vote_results[0][0]
-    clinton16 = vote_results[0][1]
+    candidate_rep = vote_results[0][0]
+    candidate_dem = vote_results[0][1]
 
     # Calculate the total
-    total_vote = trump16 + clinton16
+    total_vote = candidate_rep + candidate_dem
 
     # Calculate the percentages
-    trump16_percentage = (trump16 / total_vote) * 100
-    clinton16_percentage = (clinton16 / total_vote) * 100
+    candidate_rep_percentage = (candidate_rep / total_vote) * 100
+    candidate_dem_percentage = (candidate_dem / total_vote) * 100
 
-    percentages_vote = [round(trump16_percentage),round(clinton16_percentage)]
+    percentages_vote = [round(candidate_rep_percentage),round(candidate_dem_percentage)]
     return percentages_vote
     
 def calculate_demographics_percentages(demographics):
