@@ -34,7 +34,7 @@ function createPieChart(containerId, data) {
     var radius = Math.min(width, height) / 2;
 
     
-    var customColors = ['#D8BFD8', '#8B008B', '#FAE6FA', '#DE6FA1', '#B768A2', '#86608E', '#78184A', '#702963', '#856088', '#563C5C'];
+    var customColors = ['#563C5C', '#8B008B', '#FAE6FA', '#DE6FA1', '#B768A2', '#86608E', '#78184A', '#702963', '#856088', '#D8BFD8'];
 
     var color = d3.scaleOrdinal()
         .domain(data.map(function(d) { return d.category; }))
