@@ -53,9 +53,11 @@ def load_results_page(county, state, year):
     if year == '2016':
         candidate_rep = 'trump16'
         candidate_dem = 'clinton16'
+        candidate_name = Clinton
     else:
         candidate_rep = 'trump20'
         candidate_dem = 'biden20'
+        candidate_name = Biden
 
     # Getting the 2016 vote results for the selected county
     sql1 = f"SELECT {candidate_rep}, {candidate_dem} FROM elections WHERE county = '{county}' AND state = '{state}';"
@@ -71,7 +73,7 @@ def load_results_page(county, state, year):
     # Calculating percentages
     percentages_pop = calculate_demographics_percentages(demographics)
     
-    return render_template("results-page.html", votesdiv = percentages_vote, demo= percentages_pop, candidate_dem = candidate_dem)
+    return render_template("results-page.html", votesdiv = percentages_vote, demo= percentages_pop, candidate_name = candidate_name)
 
 def calculate_vote_percentages(vote_results):
     # Given numbers
