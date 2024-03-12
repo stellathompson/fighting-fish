@@ -50,23 +50,22 @@
 .piechartsandkey {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .piechartscontainer {
-  margin-left: 80px;
-  margin-top: 40px;
+margin-left: 70px;
+margin-top: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 200px;
-  height: 200px;
+    width: 200px;
+    height: 200px;
   position: relative;
   }
 
   .keycontainer {
-  margin-right: 40px;
+  margin-right: 90px;
     position: relative;
     width: 200px;
     height: 200px;
