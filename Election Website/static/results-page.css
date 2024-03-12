@@ -53,16 +53,16 @@
 }
 
 .piechartscontainer {
-margin-left: 70px;
-margin-top: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-    width: 200px;
-    height: 200px;
-  position: relative;
-  }
+  margin-left: 300px;
+  margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+      width: 200px;
+      height: 200px;
+    position: relative;
+    }
 
   .keycontainer {
   margin-right: 90px;
