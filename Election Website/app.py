@@ -53,11 +53,11 @@ def load_results_page(county, state, year):
     if year == '2016':
         candidate_rep = 'trump16'
         candidate_dem = 'clinton16'
-        candidate_name = Clinton
+        candidate_name = 'Clinton'
     else:
         candidate_rep = 'trump20'
         candidate_dem = 'biden20'
-        candidate_name = Biden
+        candidate_name = 'Biden'
 
     # Getting the 2016 vote results for the selected county
     sql1 = f"SELECT {candidate_rep}, {candidate_dem} FROM elections WHERE county = '{county}' AND state = '{state}';"
