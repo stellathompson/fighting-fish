@@ -61,7 +61,7 @@ def results_page(county,state,year):
     
     # getting the 2016 results for the state and county
     if '2016' == year:
-        print("Yes)
+        print("Yes")
         sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
         cur.execute(sql)
         trump = cur.fetchall()
