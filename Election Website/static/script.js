@@ -8,8 +8,8 @@
  */
 
 
-var demographicsColors = ['#78184A', '#5a3749', '#FAE6FA', '#BDB5D5', '#B768A2', '#86608E']; 
-var votingResultsColors = ['#856088', '#D8BFD8']; 
+var demographicsColors = ['#D8BFD8', '#5a3749', '#FAE6FA', '#BDB5D5', '#B768A2', '#86608E']; 
+var votingResultsColors = ['#856088', '#78184A']; 
 
 // Pie chart for the Demographics data from the elections
 var demographicsData = [
