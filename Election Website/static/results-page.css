@@ -65,13 +65,7 @@
 }
 
 .piechartscontainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 200px;
-  /*margin-left: 400px;
+  margin-left: 400px;
   margin-top: 90px;
   display: flex;
   justify-content: space-between;
@@ -79,7 +73,7 @@
   text-align: center;
   width: 200px;
   height: 200px;
-  position: relative;*/
+  position: relative;
 }
 
 .flower {
@@ -89,16 +83,11 @@
 }
 
 .keycontainer {
-  margin-top: 20px;
-  text-align: center;
-  width: 100%;
-  max-width: 200px;
-
-  /*margin-right: 90px;
+  margin-right: 90px;
   position: relative;
   width: 200px;
   height: 200px;
-  overflow: hidden; */
+  overflow: hidden;
 }
 
 .buttonsContainer {
