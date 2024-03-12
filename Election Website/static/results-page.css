@@ -77,11 +77,10 @@
   }
 
   .keycontainer {
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 200px;
     margin-top: 90px; 
-    right: 20px; 
   }
   
   .buttonsContainer {
