@@ -18,12 +18,12 @@ var votingResultsData = [
 
 // Pie chart for the Demographics data from the elections
 var demographicsData = [
-    { category: 'hispanic', value: dermo[0]},
-    { category: 'white', value: dermo[1]},
-    { category: 'black', value: dermo[2]},
-    { category: 'native', value: dermo[3]},
-    { category: 'asian', value: dermo[4]},
-    { category: 'pacific', value: dermo[5]}
+    { category: 'hispanic', value: demo[0]},
+    { category: 'white', value: demo[1]},
+    { category: 'black', value: demo[2]},
+    { category: 'native', value: demo[3]},
+    { category: 'asian', value: demo[4]},
+    { category: 'pacific', value: demo[5]}
 ];
 
 // This function that creates the piechart according to the given data
