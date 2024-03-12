@@ -49,7 +49,7 @@ def aboutus_page():
     return render_template("about-us-page.html")
 
 @app.route('/results/<state>/<county>/<year>')
-def results_page(county,state):
+def results_page(county,state,year):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
