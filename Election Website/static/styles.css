@@ -3,7 +3,7 @@
     Yeseo Jeon, Kritika Pandit, Luha Yang, Daniel Lumbu, Stella Thompson
     March 5, 2024
 
-    CSS for the piecharts page.
+    CSS for the piecharts 
 */
 
 
@@ -68,14 +68,4 @@ border-radius: 8px;
 height: 100vh;
 }
 
-/* Setting the color of the keys same as the color of each of the piechart elements */
-
-.rectangle1 { background-color: #563C5C; }
-.rectangle2 { background-color: #8B008B; }
-.rectangle3 { background-color: #FAE6FA; }
-.rectangle4 { background-color: #DE6FA1; }
-.rectangle5 { background-color: #B768A2; }
-.rectangle6 { background-color: #86608E; }
-.rectangle7 { background-color: #78184A; }
-.rectangle8 { background-color: #702963; }
 
