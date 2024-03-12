@@ -111,8 +111,12 @@ def get_top_states_data(year):
     return jsonify(election_data)
 
 if __name__ == '__main__':
-    my_port = 5137
-    print("Open the web browser using port number:" + my_port)
+    # my_port = 5137
+    # print("Open the web browser using port number: " + my_port + ".")
+
+    my_port = input("Enter your port number.")
+    print("Open the web browser using your port number.")
+
     print("Here's the link:")
     url = "http://stearns.mathcs.carleton.edu:{}/".format(my_port)
     print(url)
