@@ -97,7 +97,7 @@ def results_page(county,state):
     pacific_percentage = (pacific / total2) * 100
 
     percentages2 =[hispanic_percentage,white_percentage,black_percentage,native_percentage,asian_percentage,pacific_percentage]
-    return render_template("index.html", votesdiv = percentages, dermo= percentages2)
+    return render_template("results-page.html", votesdiv = percentages, dermo= percentages2)
 
 
 
