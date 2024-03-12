@@ -78,7 +78,7 @@
     position: relative;
     width: 200px;
     height: 200px;
-     overflow: hidden;
+    overflow: hidden;
   }
   
   .buttonsContainer {
@@ -107,7 +107,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: #950740; 
+    background-color: #856088; 
     top: 30px; 
     left: 20px; 
   }
@@ -121,7 +121,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: CornflowerBlue; 
+    background-color: #78184A;
     top: 70px; 
     left: 20px;  
   }
@@ -135,7 +135,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: DarkCyan; 
+    background-color: #7F00FF; 
     top: 110px; 
     left: 20px;  
   }
@@ -149,7 +149,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: DarkSlateBlue; 
+    background-color: #5a3749; 
     top: 150px; 
     left: 20px;  
   }
@@ -163,7 +163,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: Chocolate; 
+    background-color: #6d296d; 
     top: 30px; 
     left: 110px;  
   }
@@ -177,7 +177,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: GoldenRod; 
+    background-color: #7260a9;
     top: 70px; 
     left: 110px;  
   }
@@ -191,7 +191,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: DarkSeaGreen; 
+    background-color: #B768A2;
     top: 110px; 
     left: 110px;  
   }
@@ -205,7 +205,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: DarkMagenta; 
+    background-color: #483248;; 
     top: 150px; 
     left: 110px;  
   }
@@ -220,18 +220,3 @@
     font-family: "Trebuchet MS", sans-serif;	
     z-index: 4;
   }
-
-
-  /* Setting the color of the keys same as the color of each of the piechart elements */
-
-  .rectangle1 { background-color: #856088; } 
-  .rectangle2 { background-color: #78184A; } 
-  .rectangle3 { background-color: #7F00FF; } 
-  .rectangle4 { background-color: #5a3749; } 
-  .rectangle5 { background-color: #6d296d; } 
-  .rectangle6 { background-color: #7260a9; } 
-  .rectangle7 { background-color: #B768A2; } 
-  .rectangle8 { background-color: #483248; } 
-  
-
-  
