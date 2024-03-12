@@ -64,7 +64,7 @@ def load_results_page(county, state, year):
     # Calculating percentages
     percentages_vote = calculate_vote_percentages(vote_results)
     
-    # Getting dermographics for the selected county
+    # Getting dermographics for the selected state
     sql2 = f"SELECT hispanic, white, black, native, asian, pacific FROM elections WHERE county = '{county}' AND state = '{state}';"
     demographics = get_data(sql2)
 
