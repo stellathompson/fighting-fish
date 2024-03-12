@@ -127,7 +127,7 @@ def get_top_states_data(year):
 
 if __name__ == '__main__':
     my_port = 5137
-    print("Open the web browser using port number: " + my_port + ".")
+    print("Open the web browser using port number: " + str(my_port) + ".")
 
     # my_port = input("Enter your port number: ")
     # print("Open the web browser using your port number.")
