@@ -73,6 +73,12 @@
     position: relative;
     }
 
+.flower {
+    text-align: center;
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
   .keycontainer {
   margin-right: 90px;
     position: relative;
@@ -107,7 +113,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: #856088; 
+    background-color: #CD5C5C; 
     top: 30px; 
     left: 20px; 
   }
@@ -121,7 +127,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: #78184A;
+    background-color: #3333cc;
     top: 70px; 
     left: 20px;  
   }
@@ -149,7 +155,7 @@
     color: white;
     height: 30px;
     width: 70px;
-    background-color: #5a3749; 
+    background-color: #ffcccc; 
     top: 150px; 
     left: 20px;  
   }
