@@ -37,7 +37,7 @@ body {
       
     <h1 class = "Header">Results:</h1>
 
-        <br><br><br><br>
+        <br>
 
     <div class="Content">
 <script>
@@ -45,7 +45,8 @@ body {
         var dermo = {{dermo|tojson|safe }};
     </script>
 
-    <div class="container">
+<div class="piechartsandkey">
+      <div class="piechartscontainer">
         <div class="flower" id="flower1">
             <div class="label">Pie Chart 1</div>
 
@@ -53,7 +54,8 @@ body {
         <div class="flower" id="flower2">
             <div class="label">Pie Chart 2</div>
 
-        </div>
+          </div>
+          </div>
 
         <div class="keycontainer">
           <p class="keyp">Key</p>
@@ -69,8 +71,7 @@ body {
             <div class="rectangle8">Hispanic</div>
           </div>
         </div>
-        
-    </div>
+      </div>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="/static/script.js" defer></script>

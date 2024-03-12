@@ -65,7 +65,13 @@
   align-items: center;
 }
 
-.container {
+.piechartsandkey {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.piechartscontainer {
   margin-top: 30px;
   margin-right: 40px;
   display: flex;
@@ -75,11 +81,12 @@
   border-radius: 8px;
   height: 100vh;
   position: relative;
+
   }
 
   .keycontainer {
-    margin-right: 40px;
     position: relative;
+    margin-right: 40px;
     width: 200px;
     height: 200px;
   }
