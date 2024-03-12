@@ -1,102 +1,104 @@
-'''
-    main-website.py
-
-    Stella Thompson, Kritika Pandit, Luha Yang, Daniel Lumbu, Yeseo Jeon
-    March 4, 2024
-
-    Flask API to support Election Data Visualizer web application
-    that uses 2016 and 2020 election database.
-'''
-
+# Flask API to support Election Data Visualizer web application
+# that uses 2016 and 2020 election database.
+#
+# author: Stella Thompson, Kritika Pandit, Luha Yang, Daniel Lumbu, Yeseo Jeon
+# Feb 2024
 
 import psycopg2
 from flask import Flask, render_template
-import math
-import webbrowser
 
 app = Flask(__name__)
 
 # To test hompage
-# http://stearns.mathcs.carleton.edu:<port number>/
-
-
+# http://stearns.mathcs.carleton.edu:5137/
 @app.route('/')
-def homepage():
+def load_homepage():
     return render_template("homepage.html")
 
-@app.route('/state/<state>')
-def counties(state):
+def get_data(sql):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
         database="panditk",
         user="panditk",
         password="square555cow")
-
+    
     cur = conn.cursor()
+    cur.execute(sql)
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    return cur.fetchall()
+
+@app.route('/state/<state>')
+def load_select_county_page(state):
+
     state_name = state.upper()
     sql = f"SELECT county FROM elections WHERE state = '{state_name}';"
-    cur.execute(sql)
-    list_of_counties = cur.fetchall()
+    list_of_counties = get_data(sql)
 
     return render_template("select-county-page.html",  counties = list_of_counties, state = state )
 
 @app.route('/aboutus')
-def aboutus_page():
+def load_aboutus_page():
     return render_template("about-us-page.html")
 
 @app.route('/results/<state>/<county>/2016')
-def results_page(county,state):
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="panditk",
-        user="panditk",
-        password="square555cow")
+def load_results_page(county, state):
 
-    cur = conn.cursor()
-    # getting the 2016 results for the state and county
-    sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
-    cur.execute(sql)
-    trump = cur.fetchall()
+    # Getting the 2016 vote results for the selected county
+    sql1 = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
+    vote_results = get_data(sql1)
 
+    # Calculating percentages
+    percentages_vote = calculate_vote_percentages(vote_results)
+    
+    # Getting dermographics for the selected county
+    sql2 = f"SELECT hispanic, white, black, native, asian, pacific FROM elections WHERE county = '{county}' AND state = '{state}';"
+    demographics = get_data(sql2)
+
+    # Calculating percentages
+    percentages_pop = calculate_demographics_percentages(demographics)
+    
+    return render_template("results-page.html", votesdiv = percentages_vote, dermo= percentages_pop)
+
+def calculate_vote_percentages(vote_results):
     # Given numbers
-    number1 = trump[0][0]
-    number2 = trump[0][1]
+    trump16 = vote_results[0][0]
+    clinton16 = vote_results[0][1]
 
     # Calculate the total
-    total = number1 + number2
+    total_vote = trump16 + clinton16
 
     # Calculate the percentages
-    percentage1 = (number1 / total) * 100
-    percentage2 = (number2 / total) * 100
+    trump16_percentage = (trump16 / total_vote) * 100
+    clinton16_percentage = (clinton16 / total_vote) * 100
 
-    percentages = [round(percentage1),round(percentage2)]
-    # getting Dermographics
-    sql2 = f"SELECT hispanic, white, black, native, asian, pacific FROM elections WHERE county = '{county}' AND state = '{state}';"
-    cur.execute(sql2)
-    dermographics = cur.fetchall()
-    hispanic = dermographics[0][0]
-    white = dermographics[0][1]
-    black = dermographics[0][2]
-    native = dermographics[0][3]
-    asian = dermographics[0][4]
-    pacific = dermographics[0][5]
+    percentages_vote = [round(trump16_percentage),round(clinton16_percentage)]
+    return percentages_vote
+    
+def calculate_demographics_percentages(demographics):
+    hispanic = demographics[0][0]
+    white = demographics[0][1]
+    black = demographics[0][2]
+    native = demographics[0][3]
+    asian = demographics[0][4]
+    pacific = demographics[0][5]
 
-    total2 = hispanic + white + black + native + asian + pacific
+    total_pop = hispanic + white + black + native + asian + pacific
 
-    hispanic_percentage = (hispanic / total2) * 100
-    white_percentage = (white / total2) * 100
-    black_percentage = (black / total2) * 100
-    native_percentage = (native / total2) * 100
-    asian_percentage = (asian / total2) * 100
-    pacific_percentage = (pacific / total2) * 100
+    hispanic_percentage = (hispanic / total_pop) * 100
+    white_percentage = (white / total_pop) * 100
+    black_percentage = (black / total_pop) * 100
+    native_percentage = (native / total_pop) * 100
+    asian_percentage = (asian / total_pop) * 100
+    pacific_percentage = (pacific / total_pop) * 100
 
-    percentages2 =[hispanic_percentage,white_percentage,black_percentage,native_percentage,asian_percentage,pacific_percentage]
-    return render_template("results-page.html", votesdiv = percentages, dermo= percentages2)
-
-
-
+    percentages_pop =[hispanic_percentage, white_percentage, black_percentage, native_percentage, asian_percentage, pacific_percentage]
+    
+    return percentages_pop
 
 # Route to show top 10 states with highest vote percentile for each candidate in each year
 @app.route('/top_states', methods=['GET'])
@@ -114,7 +116,7 @@ if __name__ == '__main__':
     # my_port = 5137
     # print("Open the web browser using port number: " + my_port + ".")
 
-    my_port = input("Enter your port number.")
+    my_port = input("Enter your port number: ")
     print("Open the web browser using your port number.")
 
     print("Here's the link:")
