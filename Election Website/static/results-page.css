@@ -220,3 +220,12 @@
     font-family: "Trebuchet MS", sans-serif;	
     z-index: 4;
   }
+
+.chart-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  display: inline-block;
+  background-color: white;
+}
+
