@@ -67,7 +67,8 @@ body {
     function handleSubmit() {
       var state = "{{state|safe }}";
       var selectedCountyId = document.getElementById("county").value;
-      window.location.href = "/results/"+ state +"/" + selectedCountyId + "/2016";
+      var selectedYearId = document.getElementById("year").value;
+      window.location.href = "/results/"+ state +"/" + selectedCountyId + "/" + selectedYearId;
 
     }
     </script>

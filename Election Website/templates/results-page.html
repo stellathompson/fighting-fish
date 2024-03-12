@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="/static/results-page.css">
-<style>
-body {
-  background-image: url('/static/Background.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
-}
-</style>
+  <style>
+  body {
+    background-image: url('/static/Background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+  </style>
 </head>
+
 <body>
 
   <div class="MenuBar">
+
     <h4 class="RunningHead">Election Data Visualizer</h4>
     
     <div class="ButtonsContainer">
-    <p class="Button">
-      <a href="/">
-        <button class="Button">
-          Home
-        </button>
-      </a>
-    </p>
+
+      <p class="Button">
+        <a href="/">
+          <button class="Button">
+            Home
+          </button>
+        </a>
+      </p>
     
-    <p class="Button">
-      <a href="/aboutus">
-        <button class="Button">
-          About Us
-        </button>
-      </a>
-    </p>
+      <p class="Button">
+        <a href="/aboutus">
+          <button class="Button">
+            About Us
+          </button>
+        </a>
+      </p>
+
     </div>
-    </div>
+
+  </div>
       
     <h1 class = "Header">County Demographics and Voting Results</h1>
 
@@ -42,7 +48,7 @@ body {
     <div class="Content">
 <script>
         var votesdiv = {{votesdiv|tojson|safe }};
-        var dermo = {{dermo|tojson|safe }};
+        var demo = {{demo|tojson|safe }};
     </script>
 
 <div class="piechartsandkey">
@@ -53,7 +59,6 @@ body {
         </div>
         <div class="flower" id="flower2">
             <div class="label">Candidates</div>
-
           </div>
           </div>
 
@@ -72,6 +77,7 @@ body {
           </div>
         </div>
       </div>
+
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="/static/results-page.js" defer></script>

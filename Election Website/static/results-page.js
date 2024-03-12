@@ -7,9 +7,8 @@
  * is drawn.
  */
 
-var votingResultsColors = ['#856088', '#78184A']; 
-var demographicsColors = ['#7F00FF', '#5a3749', '#6d296d', '#7260a9', '#B768A2', '#483248']; 
-
+var votingResultsColors = ['#CD5C5C', '#3333cc']; 
+var demographicsColors = ['#7F00FF', '#ffcccc', '#6d296d', '#7260a9', '#B768A2', '#483248']; 
 
 // Pie chart for the Voting Results in 2016 elections
 var votingResultsData = [
@@ -17,18 +16,15 @@ var votingResultsData = [
     { category: 'Clinton ' + votesdiv[1] + '%', value: votesdiv[1] }
 ];
 
-
 // Pie chart for the Demographics data from the elections
 var demographicsData = [
-    { category: 'hispanic', value: dermo[0]},
-    { category: 'white', value: dermo[1]},
-    { category: 'black', value: dermo[2]},
-    { category: 'native', value: dermo[3]},
-    { category: 'asian', value: dermo[4]},
-    { category: 'pacific', value: dermo[5]}
+    { category: 'hispanic', value: demo[0]},
+    { category: 'white', value: demo[1]},
+    { category: 'black', value: demo[2]},
+    { category: 'native', value: demo[3]},
+    { category: 'asian', value: demo[4]},
+    { category: 'pacific', value: demo[5]}
 ];
-
-
 
 // This function that creates the piechart according to the given data
 function createPieChart(containerId, data, customColors) {
