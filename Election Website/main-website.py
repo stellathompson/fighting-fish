@@ -20,7 +20,7 @@ app = Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
-@app.route('/pop/<state>')
+@app.route('/state/<state>')
 def counties(state):
     conn = psycopg2.connect(
         host="localhost",
