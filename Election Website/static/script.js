@@ -1,25 +1,16 @@
 /*
  * script.js
- * Kritika Pandit
+ * Authors: Kritika Pandit, Stella Thompson, Daniel Lumbu, Yeseo Jeon, Luha Yang
+ * This is javascript controls the piecharts by taking the information from the data set
+ * and feeding it into the function. Two piecharts, one for the demographics of the county 
+ * based on the race and the other for the voting results for 2 candidates, Trump and Clinton
+ * is drawn.
  */
 
-//Flower and Petals refer to the piechartt, each piechart is a flower with different colors(petals)
 
-// Need to replace this with a py that has SQL queries that takes the data and
-//makes a piechart accordingly
-
-// I have made 2 piecharts as we wanted and we need a connection with the data 
-// and figure out how to adjest it:
-
-
-// this can be added in javascript or in a python file. it is same either way:
-
-// For the demographics:
-// hispanic, white, black, native, asian, pacific
-// REFER TO PIECHARTS.PY TO SEE SOME HINTS.
-// trump16, clinton16, trump20, biden20
+//Pie chart for the Demographics data from the elections
 var demographicsData = [
-    { category: 'hispanic', value: dermo[0] },
+    { category: 'hispanic', value: dermo[0]},
     { category: 'white', value: dermo[1]},
     { category: 'black', value: dermo[2]},
     { category: 'native', value: dermo[3]},
@@ -28,28 +19,26 @@ var demographicsData = [
 ];
 
 
-// foR THE VOTING RESULTS:
-//trump16, clinton16, trump20, biden20
-// nEED TO BE CAREFUL ON WHICH YEAR? 16 OR 2, NEED TO ADJUST THE SQL ACCORDINLGY
-
+// Pie chart for the Voting Results in 2016 elections
 var votingResultsData = [
     { category: 'Trump ' + votesdiv[0] + '%' , value: votesdiv[0] },
     { category: 'Clinton ' + votesdiv[1] + '%', value: votesdiv[1] }
 
 ];
 
+
+// This function that creates the piechart according to the given data
 function createPieChart(containerId, data) {
     var width = 300;
     var height = 300;
     var radius = Math.min(width, height) / 2;
 
-
+    
     var customColors = ['#D8BFD8', '#8B008B', '#FAE6FA', '#DE6FA1', '#B768A2', '#86608E', '#78184A', '#702963', '#856088', '#563C5C'];
 
     var color = d3.scaleOrdinal()
         .domain(data.map(function(d) { return d.category; }))
         .range(customColors);
-
 
     var arc = d3.arc()
         .outerRadius(radius - 10)
@@ -81,6 +70,6 @@ function createPieChart(containerId, data) {
         .text (function(d) { return d.data.category; });
 }
 
-// Call the function to create pie charts
+// Calling the function to create pie charts
 createPieChart("#flower1", demographicsData);
 createPieChart("#flower2", votingResultsData);
