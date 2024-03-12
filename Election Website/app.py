@@ -109,6 +109,7 @@ def calculate_demographics_percentages(demographics):
     
     return percentages_pop
 
+'''
 # Route to show top 10 states with highest vote percentile for each candidate in each year
 @app.route('/top_states', methods=['GET'])
 def top_states_page():
@@ -120,6 +121,7 @@ def get_top_states_data(year):
     sql = f"SELECT state, state_code, {candidate} FROM election_state ORDER BY {candidate} DESC LIMIT 5;"
     election_data = get_data(sql)
     return jsonify(election_data)
+'''
 
 if __name__ == '__main__':
     # my_port = 5137
