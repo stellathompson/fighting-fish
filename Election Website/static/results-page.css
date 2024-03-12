@@ -66,7 +66,8 @@
 }
 
 .container {
-  margin-top: 90px;
+  margin-top: 30px;
+  margin-right: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,10 +78,10 @@
   }
 
   .keycontainer {
+    margin-right: 40px;
     position: relative;
     width: 200px;
     height: 200px;
-    margin-top: 90px; 
   }
   
   .buttonsContainer {
