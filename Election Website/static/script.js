@@ -8,24 +8,25 @@
  */
 
 
-var demographicsColors = ['#D8BFD8', '#5a3749', '#6d296d', '#BDB5D5', '#B768A2', '#86608E']; 
+var demographicsColors = ['#D8BFD8', '#5a3749', '#6d296d', '#7260a9', '#B768A2', '#86608E']; 
 var votingResultsColors = ['#856088', '#78184A']; 
 
 // Pie chart for the Demographics data from the elections
 var demographicsData = [
-    { category: 'hispanic', value: dermo[0]},
-    { category: 'white', value: dermo[1]},
-    { category: 'black', value: dermo[2]},
-    { category: 'native', value: dermo[3]},
-    { category: 'asian', value: dermo[4]},
-    { category: 'pacific', value: dermo[5]}
+    { category: 'Trump', value: dermo[0]}, 
+    { category: 'Clinton', value: dermo[1]},
+    { category: 'Black', value: dermo[2]},
+    { category: 'White', value: dermo[3]}, 
+    { category: 'Asian', value: dermo[4]}, 
+    { category: 'Pacific', value: dermo[5]} 
 ];
 
 // Pie chart for the Voting Results in 2016 elections
 var votingResultsData = [
-    { category: 'Trump ' + votesdiv[0] + '%', value: votesdiv[0] },
-    { category: 'Clinton ' + votesdiv[1] + '%', value: votesdiv[1] }
+    { category: 'Native', value: votesdiv[0] }, 
+    { category: 'Other', value: votesdiv[1] }
 ];
+
 
 
 // This function that creates the piechart according to the given data
