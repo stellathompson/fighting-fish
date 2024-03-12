@@ -60,8 +60,8 @@ def results_page(county,state,year):
     cur = conn.cursor()
     
     # getting the 2016 results for the state and county
-    print(type(year))
     if '2016' == year:
+        print("Yes")
         sql = f"SELECT trump16, clinton16 FROM elections WHERE county = '{county}' AND state = '{state}';"
         cur.execute(sql)
         trump = cur.fetchall()
@@ -107,7 +107,7 @@ def results_page(county,state,year):
 
 
 
-    return render_template("results-page.html", votesdiv = percentages, dermo= percentages2)
+    return render_template("results-page.html", votesdiv = percentages, demo= percentages2)
 if __name__ == '__main__':
     my_port = 5126
     app.run(host='0.0.0.0', port = my_port)
