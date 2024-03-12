@@ -224,14 +224,15 @@
 
   /* Setting the color of the keys same as the color of each of the piechart elements */
 
-.rectangle1 { background-color: #78184A; }
-.rectangle2 { background-color: #5a3749; }
-.rectangle3 { background-color: #c05fc0; }
-.rectangle4 { background-color: #BDB5D5; }
-.rectangle5 { background-color: #812669; }
-.rectangle6 { background-color: #86608E; }
-.rectangle7 { background-color: #462d4b; }
-.rectangle8 { background-color: #702963; }
+  .rectangle1 { background-color: #78184A; } 
+  .rectangle2 { background-color: #86608E; } 
+  .rectangle3 { background-color: #c05fc0; } 
+  .rectangle4 { background-color: #BDB5D5; } 
+  .rectangle5 { background-color: #812669; } 
+  .rectangle6 { background-color: #5a3749; } 
+  .rectangle7 { background-color: #462d4b; } 
+  .rectangle8 { background-color: #702963; } 
+  
 
-462d4b
+
   
