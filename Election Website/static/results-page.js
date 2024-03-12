@@ -7,7 +7,7 @@
  * is drawn.
  */
 
-var votingResultsColors = ['#CD5C5C', '#1E90FF']; 
+var votingResultsColors = ['#CD5C5C', '#3333cc']; 
 var demographicsColors = ['#7F00FF', '#5a3749', '#6d296d', '#7260a9', '#B768A2', '#483248']; 
 
 
