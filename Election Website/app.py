@@ -26,11 +26,13 @@ def get_data(sql):
     cur = conn.cursor()
     cur.execute(sql)
 
+    data = cur.fetchall()
+
     conn.commit()
     cur.close()
     conn.close()
 
-    return cur.fetchall()
+    return data
 
 @app.route('/state/<state>')
 def load_select_county_page(state):
