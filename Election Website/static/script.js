@@ -8,33 +8,33 @@
  */
 
 
-//Pie chart for the Demographics data from the elections
+// Defining variables that holds the color for each of the data in pie charts
+var demographicsColors = ['#78184A', '#5a3749', '#FAE6FA', '#BDB5D5', '#B768A2', '#86608E']; 
+var votingResultsColors = ['#856088', '#D8BFD8']; 
+
+// Pie chart for the Demographics data from the elections
 var demographicsData = [
     { category: 'hispanic', value: dermo[0]},
     { category: 'white', value: dermo[1]},
     { category: 'black', value: dermo[2]},
     { category: 'native', value: dermo[3]},
     { category: 'asian', value: dermo[4]},
-    { category: 'pasific', value: dermo[5]}
+    { category: 'pacific', value: dermo[5]}
 ];
-
 
 // Pie chart for the Voting Results in 2016 elections
 var votingResultsData = [
-    { category: 'Trump ' + votesdiv[0] + '%' , value: votesdiv[0] },
+    { category: 'Trump ' + votesdiv[0] + '%', value: votesdiv[0] },
     { category: 'Clinton ' + votesdiv[1] + '%', value: votesdiv[1] }
-
 ];
 
 
+
 // This function that creates the piechart according to the given data
-function createPieChart(containerId, data) {
+function createPieChart(containerId, data, customColors) {
     var width = 300;
     var height = 300;
     var radius = Math.min(width, height) / 2;
-
-    
-    var customColors = ['#78184A', '#5a3749', '#FAE6FA', '#BDB5D5', '#B768A2', '#86608E', '#462d4b', '#702963', '#856088', '#D8BFD8'];
 
 
     var color = d3.scaleOrdinal()
