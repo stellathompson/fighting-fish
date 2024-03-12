@@ -10,11 +10,8 @@
 
 
 import psycopg2
-import os
-import webbrowser
 from flask import Flask, render_template
 import math
-import threading
 import webbrowser
 
 app = Flask(__name__)
@@ -112,17 +109,12 @@ def get_top_states_data(year):
     sql = f"SELECT state, state_code, {candidate} FROM election_state ORDER BY {candidate} DESC LIMIT 5;"
     election_data = get_data(sql)
     return jsonify(election_data)
-    
-
-def open_browser(website):
-    webbrowser.open_new(website)
 
 if __name__ == '__main__':
-    my_port = input("Enter your port number: ")
-    print("Open the web browser using your port number.")
+    my_port = 5137
+    print("Open the web browser using port number:" + my_port)
     print("Here's the link:")
     url = "http://stearns.mathcs.carleton.edu:{}/".format(my_port)
     print(url)
 
-    #threading.Timer(1.25, lambda: webbrowser.open(url)).start()
     app.run(host='0.0.0.0', port=my_port, debug=False)
