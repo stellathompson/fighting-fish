@@ -14,13 +14,10 @@
 </head>
 
 <body>
-
   <div class="MenuBar">
-
     <h4 class="RunningHead">Election Data Visualizer</h4>
     
     <div class="ButtonsContainer">
-
       <p class="Button">
         <a href="/">
           <button class="Button">
@@ -36,31 +33,24 @@
           </button>
         </a>
       </p>
-
     </div>
-
   </div>
-      
-    <h1 class = "Header">County Demographics and Voting Results</h1>
 
-        <br>
+  <h1 class = "Header">County Demographics and Voting Results</h1>
 
-    <div class="Content">
-<script>
-        var votesdiv = {{votesdiv|tojson|safe }};
-        var demo = {{demo|tojson|safe }};
+  <br>
+
+  <div class="Content">
+    <script>
+      var votesdiv = {{votesdiv|tojson|safe}};
+      var demo = {{demo|tojson|safe}};
     </script>
 
-<div class="piechartsandkey">
+    <div class="piechartsandkey">
       <div class="piechartscontainer">
         <div class="flower" id="flower1">
-            <div class="label">Demographics</div>
-
+          <div class="label">Demographics</div>
         </div>
-        <div class="flower" id="flower2">
-            <div class="label">Candidates</div>
-          </div>
-          </div>
 
         <div class="keycontainer">
           <p class="keyp">Key</p>
@@ -77,14 +67,12 @@
           </div>
         </div>
       </div>
-
+    </div>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="/static/results-page.js" defer></script>
 
     <br><br>
-
   </div>
-
 </body>
 </html>
