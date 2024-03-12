@@ -106,7 +106,7 @@ def results_page(county,state,year):
 
 
 
-    return render_template("results-page.html", votesdiv = percentages, dermo= percentages2)
+    return render_template("results-page.html", votesdiv = percentages, demo= percentages2)
 if __name__ == '__main__':
     my_port = 5126
     app.run(host='0.0.0.0', port = my_port)
