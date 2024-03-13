@@ -38,10 +38,14 @@ def get_data(sql):
 def load_select_county_page(state):
 
     state_name = state.upper()
-    sql = f"SELECT county FROM elections WHERE state = '{state_name}' AND trump16 IS NOT NULL AND white IS NOT NULL;"
+    sql = f"SELECT county FROM elections WHERE state = '{state_name}' AND trump16 IS NOT NULL AND trump20 IS NOT NULL AND white IS NOT NULL;"
     list_of_counties = get_data(sql)
 
-    return render_template("select-county-page.html",  counties = list_of_counties, state = state )
+    sql = f"SELECT state FROM stateabb WHERE abbreviation = '{state_name}';"
+    state_fullname = get_data(sql)
+    state_fullname = state_fullname[0]
+
+    return render_template("select-county-page.html",  counties = list_of_counties, state = state_name, fullstate = state_fullname )
 
 @app.route('/aboutus')
 def load_aboutus_page():
@@ -66,7 +70,7 @@ def load_results_page(county, state, year):
     # Calculating percentages
     percentages_vote = calculate_vote_percentages(vote_results)
     
-    # Getting dermographics for the selected state
+    # Getting demographics for the selected state
     sql2 = f"SELECT hispanic, white, black, native, asian, pacific FROM elections WHERE county = '{county}' AND state = '{state}';"
     demographics = get_data(sql2)
 
